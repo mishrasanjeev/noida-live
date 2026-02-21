@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages + Cloud Run
 
 on:
   push:
@@ -14,7 +14,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  # ── GitHub Pages ────────────────────────────────────────────────
+  build-pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,8 +35,8 @@ jobs:
         with:
           path: dist
 
-  deploy:
-    needs: build
+  deploy-pages:
+    needs: build-pages
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -43,3 +44,27 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v4
         id: deploy
+
+  # ── Google Cloud Run ────────────────────────────────────────────
+  deploy-cloudrun:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - run: gcloud auth configure-docker gcr.io --quiet
+
+      - name: Build Docker image
+        run: docker build -t gcr.io/noida-city-dir/noida-city-dir:latest .
+
+      - name: Push to GCR
+        run: docker push gcr.io/noida-city-dir/noida-city-dir:latest
+
+      - uses: google-github-actions/deploy-cloudrun@v2
+        with:
+          service: noida-city-dir
+          image: gcr.io/noida-city-dir/noida-city-dir:latest
+          region: us-central1
