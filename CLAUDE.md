@@ -44,3 +44,11 @@ All source lives under `src/`. New features go in subdirectories there (e.g. `sr
 ## ESLint notes
 
 Config is in `eslint.config.js` (ESLint 9 flat config). It applies only to `**/*.{ts,tsx}` and ignores `dist/`. Run lint before committing; the React Refresh plugin will warn if components are not exported correctly for HMR.
+
+## Git commits
+
+Always use the following co-author line in commit messages:
+
+```
+Co-Authored-By: Sanjeev Kumar <mishra.sanjeev@gmail.com>
+```

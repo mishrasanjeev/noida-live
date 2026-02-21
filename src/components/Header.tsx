@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
 
 interface NavLink {
   label: string;
@@ -14,6 +14,7 @@ const navLinks: NavLink[] = [
   { label: 'Malls', href: '#malls', icon: '🛍️' },
   { label: 'Restaurants', href: '#restaurants', icon: '🍽️' },
   { label: 'Places', href: '#places', icon: '📍' },
+  { label: 'Apartments', href: '#apartments', icon: '🏗️' },
 ];
 
 export function Header() {

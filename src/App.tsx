@@ -4,6 +4,7 @@ import { MallsSection } from './components/MallsSection';
 import { NewsSection } from './components/NewsSection';
 import { OfficesSection } from './components/OfficesSection';
 import { PlacesSection } from './components/PlacesSection';
+import { ApartmentsSection } from './components/ApartmentsSection';
 import { RestaurantsSection } from './components/RestaurantsSection';
 import { WeatherWidget } from './components/WeatherWidget';
 
@@ -33,6 +34,7 @@ function App() {
               { href: '#malls', label: '🛍️ Malls' },
               { href: '#restaurants', label: '🍽️ Food' },
               { href: '#places', label: '📍 Places' },
+              { href: '#apartments', label: '🏗️ Apartments' },
             ].map(({ href, label }) => (
               <a
                 key={href}
@@ -60,6 +62,7 @@ function App() {
         <div className="bg-white">
           <PlacesSection />
         </div>
+        <ApartmentsSection />
       </main>
 
       {/* Footer */}
@@ -89,6 +92,7 @@ function App() {
                   { href: '#malls', label: 'Shopping Malls' },
                   { href: '#restaurants', label: 'Eating Joints' },
                   { href: '#places', label: 'Places to Visit' },
+                  { href: '#apartments', label: 'Apartments' },
                 ].map(({ href, label }) => (
                   <li key={href}>
                     <a href={href} className="hover:text-indigo-400 transition-colors no-underline">

@@ -91,3 +91,23 @@ export interface NewsSource {
   category: string;
   language: string;
 }
+
+// Apartment types
+export interface Apartment {
+  id: string;
+  name: string;
+  developer: string;
+  status: 'New Launch' | 'Under Construction' | 'Ready to Move';
+  location: string;
+  sector: string;
+  priceRange: string;
+  configurations: string[];
+  towers: number;
+  maxFloors: number;
+  possession: string;
+  rating: number;
+  amenities: string[];
+  highlights: string[];
+  description: string;
+  imageUrl: string;
+}
