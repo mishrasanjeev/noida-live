@@ -13,13 +13,13 @@ export function OfficesSection() {
       subtitle="Premium coworking and managed office solutions across Noida's key business corridors"
       icon="🏢"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {offices.map((office) => (
           <Card key={office.id} className="p-5 flex flex-col gap-4">
             {/* Header */}
             <div className="flex items-start justify-between gap-2">
               <div>
-                <h3 className="font-bold text-slate-900 text-lg leading-tight">{office.name}</h3>
+                <h3 className="font-bold text-slate-900 text-base sm:text-lg leading-tight">{office.name}</h3>
                 <div className="flex items-center gap-1 mt-1 text-slate-500 text-sm">
                   <MapPin size={13} />
                   <span>{office.location}</span>

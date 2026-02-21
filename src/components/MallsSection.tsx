@@ -13,7 +13,7 @@ export function MallsSection() {
       subtitle="From India's largest mall to Venice-inspired luxury — Noida's best retail destinations"
       icon="🛍️"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {malls.map((mall) => (
           <Card
             key={mall.id}
@@ -25,7 +25,7 @@ export function MallsSection() {
             <div className="flex items-start justify-between gap-2">
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="font-bold text-slate-900 text-lg leading-tight">{mall.name}</h3>
+                  <h3 className="font-bold text-slate-900 text-base sm:text-lg leading-tight">{mall.name}</h3>
                   {mall.isPremium && (
                     <span className="text-amber-400 text-lg">★</span>
                   )}
@@ -39,7 +39,7 @@ export function MallsSection() {
             </div>
 
             {/* Stats row */}
-            <div className="flex items-center gap-4 text-sm text-slate-600">
+            <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm text-slate-600">
               <div className="flex items-center gap-1">
                 <ShoppingBag size={13} className="text-indigo-400" />
                 <span>{mall.stores}+ stores</span>

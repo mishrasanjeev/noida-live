@@ -19,10 +19,10 @@ function App() {
           <p className="text-indigo-300 font-medium tracking-widest text-sm mb-4 uppercase">
             Uttar Pradesh, India
           </p>
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
             🏙️ Noida City Directory
           </h1>
-          <p className="text-indigo-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-indigo-200 text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
             Your one-stop guide to weather, news, workspaces, malls, restaurants, and must-visit
             places in the City of the Future.
           </p>
@@ -39,7 +39,7 @@ function App() {
               <a
                 key={href}
                 href={href}
-                className="px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white text-sm font-medium hover:bg-white/25 transition-colors no-underline"
+                className="px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium hover:bg-white/25 transition-colors no-underline"
               >
                 {label}
               </a>

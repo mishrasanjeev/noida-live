@@ -42,14 +42,14 @@ export function WeatherWidget() {
         const { current, daily } = weather.data;
         const { label, icon } = wmoToInfo(current.weather_code);
         return (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-6">
             {/* Current conditions */}
             <Card className="lg:col-span-2 p-6 bg-gradient-to-br from-indigo-500 to-indigo-700 text-white border-0">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-indigo-200 text-sm font-medium">📍 Noida, Uttar Pradesh</p>
                   <div className="flex items-end gap-2 mt-3">
-                    <span className="text-6xl font-bold">{Math.round(current.temperature_2m)}°</span>
+                    <span className="text-4xl sm:text-6xl font-bold">{Math.round(current.temperature_2m)}°</span>
                     <span className="text-xl text-indigo-200 mb-2">C</span>
                   </div>
                   <p className="text-indigo-100 font-medium mt-1">{label}</p>

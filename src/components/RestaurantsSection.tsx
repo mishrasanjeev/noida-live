@@ -42,12 +42,12 @@ export function RestaurantsSection() {
       icon="🍽️"
     >
       {/* Filter bar */}
-      <div className="flex flex-wrap gap-2 mb-8">
+      <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-8">
         {ALL_CATEGORIES.map((cat) => (
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
+            className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-colors ${
               active === cat
                 ? 'bg-indigo-600 text-white'
                 : 'bg-white text-slate-600 border border-slate-200 hover:border-indigo-300 hover:text-indigo-600'
@@ -58,7 +58,7 @@ export function RestaurantsSection() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
         {filtered.map((restaurant) => (
           <Card key={restaurant.id} className="p-5 flex flex-col gap-3">
             {/* Header */}
