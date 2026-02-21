@@ -1,0 +1,108 @@
+import type { Restaurant } from '../types';
+
+export const restaurants: Restaurant[] = [
+  {
+    id: 'barbeque-nation',
+    name: 'Barbeque Nation',
+    category: 'Multi-Cuisine',
+    location: 'Sector 18, Noida',
+    sector: 'Sector 18',
+    priceForTwo: '₹1,400 – ₹1,800',
+    rating: 4.3,
+    tags: ['BBQ', 'Buffet', 'Family', 'Live Grill'],
+    description:
+      'India\'s most beloved casual dining BBQ chain where guests grill their own food at the table. Unlimited starters, main course, and desserts.',
+    timings: '12:00 PM – 11:00 PM',
+  },
+  {
+    id: 'punjabi-by-nature',
+    name: 'Punjabi by Nature',
+    category: 'North Indian',
+    location: 'Sector 18, Noida',
+    sector: 'Sector 18',
+    priceForTwo: '₹1,200 – ₹1,600',
+    rating: 4.4,
+    tags: ['Punjabi', 'Dal Makhani', 'Tandoor', 'Bar'],
+    description:
+      'Award-winning North Indian restaurant known for authentic Punjabi flavours, live tandoor, and a curated bar. Perfect for celebrations.',
+    timings: '12:00 PM – 11:30 PM',
+  },
+  {
+    id: 'haldirams',
+    name: "Haldiram's",
+    category: 'North Indian',
+    location: 'Sector 37, Noida',
+    sector: 'Sector 37',
+    priceForTwo: '₹300 – ₹600',
+    rating: 4.2,
+    tags: ['Vegetarian', 'Sweets', 'Snacks', 'Budget'],
+    description:
+      'An iconic Indian brand offering authentic chaat, sweets, snacks, and complete North Indian thalis. A must-visit for vegetarian food lovers.',
+    timings: '8:00 AM – 11:00 PM',
+  },
+  {
+    id: 'brahmaputra-market',
+    name: 'Brahmaputra Market Stalls',
+    category: 'Street Food',
+    location: 'Sector 29, Noida',
+    sector: 'Sector 29',
+    priceForTwo: '₹100 – ₹300',
+    rating: 4.5,
+    tags: ['Street Food', 'Chaat', 'Golgappe', 'Night Food', 'Outdoor'],
+    description:
+      'Noida\'s most famous street food destination. Dozens of stalls serving chaat, kebabs, momos, golgappe, and more in a lively open-air market.',
+    timings: '4:00 PM – 12:00 AM',
+  },
+  {
+    id: 'imperfecto',
+    name: 'Imperfecto',
+    category: 'Continental',
+    location: 'Sector 29, Noida',
+    sector: 'Sector 29',
+    priceForTwo: '₹1,500 – ₹2,000',
+    rating: 4.3,
+    tags: ['Continental', 'Lounge', 'Bar', 'Live Music', 'Rooftop'],
+    description:
+      'A vibrant lounge-restaurant with Spanish and continental cuisine, a well-stocked bar, live music nights, and a stunning rooftop seating area.',
+    timings: '12:00 PM – 1:00 AM',
+  },
+  {
+    id: 'saffron',
+    name: 'Saffron',
+    category: 'Multi-Cuisine',
+    location: 'Radisson Blu, Sector 55',
+    sector: 'Sector 55',
+    priceForTwo: '₹2,000 – ₹3,000',
+    rating: 4.6,
+    tags: ['Fine Dining', 'Hotel Restaurant', 'Indian', 'International', 'Buffet'],
+    description:
+      'Upscale multi-cuisine restaurant at Radisson Blu with an extensive a la carte menu and weekend brunch buffet. Great for business dinners.',
+    timings: '6:30 AM – 11:00 PM',
+  },
+  {
+    id: 'momo-station',
+    name: 'Momo Station',
+    category: 'Street Food',
+    location: 'Sector 18, Noida',
+    sector: 'Sector 18',
+    priceForTwo: '₹200 – ₹400',
+    rating: 4.1,
+    tags: ['Momos', 'Tibetan', 'Quick Bite', 'Street Food'],
+    description:
+      'Hugely popular momos joint serving steamed, fried, tandoori, and pan-fried momos in a variety of fillings. Always a queue but worth the wait.',
+    timings: '11:00 AM – 10:30 PM',
+  },
+  {
+    id: 'saravana-bhavan',
+    name: 'Saravana Bhavan',
+    category: 'South Indian',
+    location: 'Sector 18, Noida',
+    sector: 'Sector 18',
+    priceForTwo: '₹400 – ₹700',
+    rating: 4.3,
+    tags: ['South Indian', 'Vegetarian', 'Dosa', 'Idli', 'Filter Coffee'],
+    description:
+      'World-famous South Indian restaurant chain offering authentic dosas, idlis, uttapams, and filter coffee in a clean, family-friendly setting.',
+    timings: '7:00 AM – 10:30 PM',
+  },
+];

@@ -1,0 +1,95 @@
+import type { Place } from '../types';
+
+export const places: Place[] = [
+  {
+    id: 'botanical-garden',
+    name: 'Noida Botanical Garden',
+    category: 'Nature',
+    location: 'Sector 38A, Noida',
+    sector: 'Sector 38A',
+    entryFee: '₹20 (Adults)',
+    rating: 4.3,
+    tags: ['Garden', 'Nature Walk', 'Photography', 'Peaceful'],
+    description:
+      'A sprawling 160-acre botanical garden with over 1,500 plant species, walking trails, a rose garden, an orchid house, and a serene lake. Perfect for morning walks.',
+    timings: '5:30 AM – 8:00 PM',
+  },
+  {
+    id: 'worlds-of-wonder',
+    name: 'Worlds of Wonder',
+    category: 'Theme Park',
+    location: 'Sector 38A, Noida',
+    sector: 'Sector 38A',
+    entryFee: '₹699 – ₹999',
+    rating: 4.1,
+    tags: ['Rides', 'Water Park', 'Family', 'Thrills', 'Weekend'],
+    description:
+      'NCR\'s most popular amusement and water park with over 25 rides and attractions including roller coasters, wave pools, and a snow world.',
+    timings: '11:00 AM – 7:00 PM',
+  },
+  {
+    id: 'okhla-bird-sanctuary',
+    name: 'Okhla Bird Sanctuary',
+    category: 'Nature',
+    location: 'Sector 94 Border, Noida',
+    sector: 'Sector 94',
+    entryFee: '₹30 (Adults)',
+    rating: 4.4,
+    tags: ['Birdwatching', 'Nature', 'Wildlife', 'Photography', 'Yamuna'],
+    description:
+      'A 4-km² sanctuary on the banks of the Yamuna river, home to over 300 species of birds including Sarus Cranes, Painted Storks, and migratory species.',
+    timings: '7:00 AM – 5:00 PM (closed Tuesday)',
+  },
+  {
+    id: 'iskcon-noida',
+    name: 'ISKCON Temple',
+    category: 'Religious',
+    location: 'Sector 33, Noida',
+    sector: 'Sector 33',
+    entryFee: 'Free',
+    rating: 4.7,
+    tags: ['Temple', 'Spiritual', 'Architecture', 'Prasad', 'Peaceful'],
+    description:
+      'A magnificent Hare Krishna temple with stunning marble architecture, daily aarti ceremonies, and a vegetarian restaurant serving prasad. Serene and spiritually uplifting.',
+    timings: '4:30 AM – 9:00 PM',
+  },
+  {
+    id: 'film-city',
+    name: 'Noida Film City',
+    category: 'Entertainment',
+    location: 'Sector 16A, Noida',
+    sector: 'Sector 16A',
+    entryFee: 'Tour packages vary',
+    rating: 4.0,
+    tags: ['Bollywood', 'Film Studios', 'Tours', 'Entertainment'],
+    description:
+      'The largest film and media production complex in India. Home to major TV channels and film studios. Guided tours available for visitors interested in Bollywood.',
+    timings: '9:00 AM – 6:00 PM',
+  },
+  {
+    id: 'heritage-transport-museum',
+    name: 'Heritage Transport Museum',
+    category: 'Heritage',
+    location: 'Tauru, near Gurugram / accessible from Noida',
+    sector: 'Greater NCR',
+    entryFee: '₹250 (Adults)',
+    rating: 4.5,
+    tags: ['Museum', 'History', 'Cars', 'Transport', 'Family'],
+    description:
+      'India\'s first dedicated transport museum with a remarkable collection of vintage cars, motorcycles, bicycles, and carriages spanning 200 years of transport history.',
+    timings: '10:00 AM – 6:00 PM (closed Monday)',
+  },
+  {
+    id: 'rashtriya-dalit-prerna-sthal',
+    name: 'Rashtriya Dalit Prerna Sthal',
+    category: 'Heritage',
+    location: 'Sector 95, Noida',
+    sector: 'Sector 95',
+    entryFee: 'Free',
+    rating: 4.2,
+    tags: ['Park', 'Monument', 'History', 'Architecture', 'Peaceful'],
+    description:
+      'A grand monument and cultural park dedicated to Dalit icons and social reformers, featuring majestic pink-sandstone sculptures, wide plazas, and manicured gardens.',
+    timings: '8:00 AM – 8:00 PM',
+  },
+];
