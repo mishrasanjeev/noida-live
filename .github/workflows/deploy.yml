@@ -51,17 +51,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: google-github-actions/setup-gcloud@v2
+
       - uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
-      - run: gcloud auth configure-docker gcr.io --quiet
-
-      - name: Build Docker image
-        run: docker build -t gcr.io/noida-city-dir/noida-city-dir:latest .
-
-      - name: Push to GCR
-        run: docker push gcr.io/noida-city-dir/noida-city-dir:latest
+      - name: Build and push via Cloud Build
+        run: |
+          BUILD_ID=$(gcloud builds submit \
+            --project=noida-city-dir \
+            --tag gcr.io/noida-city-dir/noida-city-dir:latest \
+            --async \
+            --format='value(id)' \
+            .)
+          echo "Build submitted: $BUILD_ID"
+          while true; do
+            STATUS=$(gcloud builds describe "$BUILD_ID" --project=noida-city-dir --format='value(status)')
+            echo "Status: $STATUS"
+            case "$STATUS" in
+              SUCCESS) echo "Build succeeded."; break ;;
+              FAILURE|CANCELLED|TIMEOUT|INTERNAL_ERROR) echo "Build failed with status: $STATUS"; exit 1 ;;
+              *) sleep 10 ;;
+            esac
+          done
 
       - uses: google-github-actions/deploy-cloudrun@v2
         with:
