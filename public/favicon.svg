@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Indigo background with rounded corners -->
+  <rect width="32" height="32" rx="7" fill="#4f46e5"/>
+
+  <!-- Left short building -->
+  <rect x="2" y="19" width="6" height="11" rx="1" fill="white" opacity="0.75"/>
+
+  <!-- Left-mid tall building -->
+  <rect x="9" y="13" width="5" height="17" rx="1" fill="white" opacity="0.9"/>
+  <!-- Antenna -->
+  <rect x="11" y="9" width="1.5" height="5" rx="0.75" fill="white" opacity="0.9"/>
+
+  <!-- Center hero tower -->
+  <rect x="15" y="7" width="7" height="23" rx="1" fill="white"/>
+  <!-- Spire -->
+  <rect x="18" y="3" width="1.5" height="5" rx="0.75" fill="white"/>
+  <!-- Windows -->
+  <rect x="17" y="10" width="1.5" height="1.5" rx="0.3" fill="#4f46e5" opacity="0.35"/>
+  <rect x="19.5" y="10" width="1.5" height="1.5" rx="0.3" fill="#4f46e5" opacity="0.35"/>
+  <rect x="17" y="13.5" width="1.5" height="1.5" rx="0.3" fill="#4f46e5" opacity="0.35"/>
+  <rect x="19.5" y="13.5" width="1.5" height="1.5" rx="0.3" fill="#4f46e5" opacity="0.35"/>
+  <rect x="17" y="17" width="1.5" height="1.5" rx="0.3" fill="#4f46e5" opacity="0.35"/>
+  <rect x="19.5" y="17" width="1.5" height="1.5" rx="0.3" fill="#4f46e5" opacity="0.35"/>
+
+  <!-- Right building -->
+  <rect x="23" y="16" width="7" height="14" rx="1" fill="white" opacity="0.8"/>
+
+  <!-- Ground line -->
+  <rect x="2" y="29" width="28" height="1.5" rx="0.75" fill="white" opacity="0.4"/>
+</svg>
