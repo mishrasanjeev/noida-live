@@ -111,3 +111,60 @@ export interface Apartment {
   description: string;
   imageUrl: string;
 }
+
+// Hospital types
+export interface Hospital {
+  id: string;
+  name: string;
+  type: 'Government' | 'Private' | 'Specialty' | 'Clinic';
+  location: string;
+  sector: string;
+  beds: number;
+  specialties: string[];
+  emergencyAvailable: boolean;
+  rating: number;
+  phone: string;
+  description: string;
+}
+
+// School types
+export interface School {
+  id: string;
+  name: string;
+  type: 'School' | 'College' | 'University';
+  board: string;
+  location: string;
+  sector: string;
+  grades: string;
+  rating: number;
+  highlights: string[];
+  fees: string;
+  description: string;
+  established: number;
+}
+
+// Connectivity types
+export interface ConnectivityRoute {
+  id: string;
+  name: string;
+  type: 'Metro' | 'Expressway' | 'Highway' | 'Bus' | 'Rail';
+  description: string;
+  keyStops: string[];
+  travelTime: string;
+  operationalStatus: 'Operational' | 'Under Construction' | 'Planned';
+  highlights: string[];
+}
+
+// IT Park types
+export interface ITpark {
+  id: string;
+  name: string;
+  location: string;
+  sector: string;
+  totalArea: string;
+  majorCompanies: string[];
+  type: 'SEZ' | 'IT Park' | 'Tech Hub';
+  rating: number;
+  description: string;
+  highlights: string[];
+}

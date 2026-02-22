@@ -15,6 +15,11 @@ const navLinks: NavLink[] = [
   { label: 'Restaurants', href: '#restaurants', icon: '🍽️' },
   { label: 'Places', href: '#places', icon: '📍' },
   { label: 'Apartments', href: '#apartments', icon: '🏗️' },
+  { label: 'Hospitals', href: '#hospitals', icon: '🏥' },
+  { label: 'Schools', href: '#schools', icon: '🎓' },
+  { label: 'Connect', href: '#connectivity', icon: '🚇' },
+  { label: 'Airport', href: '#jewar-airport', icon: '✈️' },
+  { label: 'IT Parks', href: '#it-parks', icon: '💻' },
 ];
 
 export function Header() {

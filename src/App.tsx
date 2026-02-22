@@ -1,4 +1,5 @@
 import './App.css';
+import { Eye } from 'lucide-react';
 import { Header } from './components/Header';
 import { MallsSection } from './components/MallsSection';
 import { NewsSection } from './components/NewsSection';
@@ -7,8 +8,16 @@ import { PlacesSection } from './components/PlacesSection';
 import { ApartmentsSection } from './components/ApartmentsSection';
 import { RestaurantsSection } from './components/RestaurantsSection';
 import { WeatherWidget } from './components/WeatherWidget';
+import { HospitalsSection } from './components/HospitalsSection';
+import { SchoolsSection } from './components/SchoolsSection';
+import { ConnectivitySection } from './components/ConnectivitySection';
+import { JewarAirportSection } from './components/JewarAirportSection';
+import { ITParkSection } from './components/ITParkSection';
+import { useVisitorCount } from './hooks/useVisitorCount';
 
 function App() {
+  const visitorCount = useVisitorCount();
+
   return (
     <div className="min-h-screen bg-slate-100">
       <Header />
@@ -35,6 +44,11 @@ function App() {
               { href: '#restaurants', label: '🍽️ Food' },
               { href: '#places', label: '📍 Places' },
               { href: '#apartments', label: '🏗️ Apartments' },
+              { href: '#hospitals', label: '🏥 Hospitals' },
+              { href: '#schools', label: '🎓 Schools' },
+              { href: '#connectivity', label: '🚇 Connect' },
+              { href: '#jewar-airport', label: '✈️ Airport' },
+              { href: '#it-parks', label: '💻 IT Parks' },
             ].map(({ href, label }) => (
               <a
                 key={href}
@@ -63,6 +77,17 @@ function App() {
           <PlacesSection />
         </div>
         <ApartmentsSection />
+        <div className="bg-white">
+          <HospitalsSection />
+        </div>
+        <SchoolsSection />
+        <div className="bg-white">
+          <ConnectivitySection />
+        </div>
+        <JewarAirportSection />
+        <div className="bg-white">
+          <ITParkSection />
+        </div>
       </main>
 
       {/* Footer */}
@@ -93,6 +118,11 @@ function App() {
                   { href: '#restaurants', label: 'Eating Joints' },
                   { href: '#places', label: 'Places to Visit' },
                   { href: '#apartments', label: 'Apartments' },
+                  { href: '#hospitals', label: 'Hospitals & Medical' },
+                  { href: '#schools', label: 'Schools & Education' },
+                  { href: '#connectivity', label: 'Connectivity' },
+                  { href: '#jewar-airport', label: 'Jewar Airport' },
+                  { href: '#it-parks', label: 'IT Parks' },
                 ].map(({ href, label }) => (
                   <li key={href}>
                     <a href={href} className="hover:text-indigo-400 transition-colors no-underline">
@@ -113,8 +143,16 @@ function App() {
           </div>
 
           <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-            <p>Weather data by <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 no-underline">Open-Meteo</a> — free & open-source</p>
-            <p>Built by Sanjeev</p>
+            <p>Weather data by <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 no-underline">Open-Meteo</a> — free &amp; open-source</p>
+            <div className="flex items-center gap-4">
+              {visitorCount !== null && (
+                <p className="flex items-center gap-1.5">
+                  <Eye size={13} className="text-indigo-400" />
+                  {visitorCount.toLocaleString()} visitors
+                </p>
+              )}
+              <p>Built by Sanjeev</p>
+            </div>
           </div>
         </div>
       </footer>
