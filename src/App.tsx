@@ -145,7 +145,7 @@ function App() {
           <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
             <p>Weather data by <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 no-underline">Open-Meteo</a> — free &amp; open-source</p>
             <div className="flex items-center gap-4">
-              {visitorCount !== null && (
+              {typeof visitorCount === 'number' && (
                 <p className="flex items-center gap-1.5">
                   <Eye size={13} className="text-indigo-400" />
                   {visitorCount.toLocaleString()} visitors

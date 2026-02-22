@@ -5,7 +5,9 @@ export function useVisitorCount() {
   useEffect(() => {
     fetch('https://api.counterapi.dev/v1/noida-live/page-visits/up')
       .then((r) => r.json())
-      .then((data: { value: number }) => setCount(data.value))
+      .then((data: { value?: number }) => {
+        if (typeof data.value === 'number') setCount(data.value);
+      })
       .catch(() => {});
   }, []);
   return count;
