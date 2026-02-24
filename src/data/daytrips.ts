@@ -46,7 +46,7 @@ export const dayTrips: DayTrip[] = [
     bestFor: ['Pilgrimage', 'Spiritual seekers', 'Photography', 'Nature lovers'],
     bestSeason: 'Sep – Apr (avoid monsoon)',
     imageUrl:
-      'https://images.unsplash.com/photo-1573408301185-9519f94293f4?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&auto=format&fit=crop&q=80',
     category: 'Pilgrimage',
   },
   {
@@ -78,7 +78,7 @@ export const dayTrips: DayTrip[] = [
     bestFor: ['Wildlife enthusiasts', 'Bird watchers', 'Nature photographers', 'Families with kids'],
     bestSeason: 'Nov – Jun (park closed Jul–Oct monsoon)',
     imageUrl:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&auto=format&fit=crop&q=80',
     category: 'Nature',
   },
   {
@@ -94,7 +94,7 @@ export const dayTrips: DayTrip[] = [
     bestFor: ['Summer escape from heat', 'Couples', 'Families', 'Weekend getaways'],
     bestSeason: 'Mar – Jun & Sep – Nov',
     imageUrl:
-      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80',
     category: 'Hill Station',
   },
   {
@@ -110,7 +110,7 @@ export const dayTrips: DayTrip[] = [
     bestFor: ['History & architecture', 'Shopping', 'Photography', 'Culture'],
     bestSeason: 'Oct – Mar',
     imageUrl:
-      'https://images.unsplash.com/photo-1477587458883-47145ed94b0c?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop&q=80',
     category: 'Heritage',
   },
   {
@@ -126,7 +126,7 @@ export const dayTrips: DayTrip[] = [
     bestFor: ['Food lovers', 'History enthusiasts', 'Culture seekers', 'Train journey (Shatabdi)'],
     bestSeason: 'Oct – Mar',
     imageUrl:
-      'https://images.unsplash.com/photo-1477587458883-47145ed94b0c?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80',
     category: 'City',
   },
 ];

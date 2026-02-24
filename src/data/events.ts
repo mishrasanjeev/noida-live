@@ -12,7 +12,7 @@ export const events: NoidaEvent[] = [
     description:
       'Noida\'s most beloved spring festival celebrating Basant Panchami with thousands of kites filling the sky. The event features competitive kite-flying, folk music, local food stalls, and traditional crafts. Families from across NCR flock to this vibrant celebration marking the arrival of spring.',
     imageUrl:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&auto=format&fit=crop&q=80',
     highlights: [
       'Competitive kite-flying contests',
       'Folk music & cultural performances',
@@ -33,7 +33,7 @@ export const events: NoidaEvent[] = [
     description:
       'Noida\'s grand Holi celebration brings the city together in a riot of colours. Organised by the Noida Authority, the event features organic colour play, live Bollywood music, DJs, and a massive cultural programme. GNIDA organises special events across sectors.',
     imageUrl:
-      'https://images.unsplash.com/photo-1574105843695-9529c4f98c3e?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1554080353-a576cf803bda?w=800&auto=format&fit=crop&q=80',
     highlights: [
       'Organic & eco-friendly colours',
       'Live Bollywood & folk music',
@@ -54,7 +54,7 @@ export const events: NoidaEvent[] = [
     description:
       'The Diwali Mela transforms Noida into a city of lights with spectacular fireworks, cultural programmes, and a grand mela featuring artisans from across UP. Markets are decked with diyas and LEDs, and the event culminates in a breathtaking fireworks display over the expressway.',
     imageUrl:
-      'https://images.unsplash.com/photo-1574870111867-089730e5a72b?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&auto=format&fit=crop&q=80',
     highlights: [
       'Grand fireworks over the expressway',
       'Artisan mela with UP handicrafts',
@@ -75,7 +75,7 @@ export const events: NoidaEvent[] = [
     description:
       'Nine nights of devotional dance, music, and worship celebrating the nine forms of Goddess Durga. Noida hosts one of NCR\'s largest Garba events with professional Garba troupes from Gujarat, dandiya dancing, and spectacular goddess idol displays.',
     imageUrl:
-      'https://images.unsplash.com/photo-1634137112764-6b9b0bbb06e7?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=800&auto=format&fit=crop&q=80',
     highlights: [
       'Professional Garba from Gujarat',
       'Dandiya nights with DJ',
@@ -117,7 +117,7 @@ export const events: NoidaEvent[] = [
     description:
       'One of NCR\'s premier running events with categories ranging from 5K to full 42.2K marathon along the scenic Noida-Greater Noida Expressway. The event attracts elite runners from across India and thousands of amateur participants from the city.',
     imageUrl:
-      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1461897104016-0b3b00cc81ee?w=800&auto=format&fit=crop&q=80',
     highlights: [
       '5K, 10K, 21K & 42K categories',
       'Elite & amateur divisions',
