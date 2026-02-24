@@ -110,7 +110,7 @@ export const dayTrips: DayTrip[] = [
     bestFor: ['History & architecture', 'Shopping', 'Photography', 'Culture'],
     bestSeason: 'Oct – Mar',
     imageUrl:
-      'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1524229648276-e66561fe45a9?w=800&auto=format&fit=crop&q=80',
     category: 'Heritage',
   },
   {
@@ -126,7 +126,7 @@ export const dayTrips: DayTrip[] = [
     bestFor: ['Food lovers', 'History enthusiasts', 'Culture seekers', 'Train journey (Shatabdi)'],
     bestSeason: 'Oct – Mar',
     imageUrl:
-      'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1688287580970-70fe8e0f4bef?w=800&auto=format&fit=crop&q=80',
     category: 'City',
   },
 ];
