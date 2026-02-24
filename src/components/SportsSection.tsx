@@ -85,10 +85,15 @@ export function SportsSection() {
 
               {/* Footer */}
               <div className="border-t border-slate-100 pt-3 flex flex-col gap-1.5 text-xs text-slate-500">
-                <span className="flex items-center gap-1.5">
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(facility.name + ' ' + facility.location + ' Noida')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 no-underline hover:text-indigo-600 hover:underline transition-colors"
+                >
                   <MapPin size={11} className="text-indigo-400 shrink-0" />
                   {facility.location}
-                </span>
+                </a>
                 <span className="flex items-center gap-1.5">
                   <Clock size={11} className="text-indigo-400 shrink-0" />
                   {facility.timings}

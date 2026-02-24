@@ -22,7 +22,14 @@ export function OfficesSection() {
                 <h3 className="font-bold text-slate-900 text-base sm:text-lg leading-tight">{office.name}</h3>
                 <div className="flex items-center gap-1 mt-1 text-slate-500 text-sm">
                   <MapPin size={13} />
-                  <span>{office.location}</span>
+                  <a
+                    href={`https://maps.google.com/?q=${encodeURIComponent(office.name + ' ' + office.location)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="no-underline hover:text-indigo-600 hover:underline transition-colors"
+                  >
+                    {office.location}
+                  </a>
                 </div>
               </div>
               <Badge variant={office.type === 'Coworking' ? 'default' : 'info'}>

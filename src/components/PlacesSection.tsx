@@ -72,7 +72,14 @@ export function PlacesSection() {
             {/* Location */}
             <div className="flex items-center gap-1 text-slate-500 text-sm">
               <MapPin size={12} />
-              <span>{place.location}</span>
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(place.name + ' ' + place.location + ' Noida')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline hover:text-indigo-600 hover:underline transition-colors"
+              >
+                {place.location}
+              </a>
             </div>
 
             {/* Rating */}

@@ -32,7 +32,14 @@ export function MallsSection() {
                 </div>
                 <div className="flex items-center gap-1 mt-1 text-slate-500 text-sm">
                   <MapPin size={13} />
-                  <span>{mall.location}</span>
+                  <a
+                    href={`https://maps.google.com/?q=${encodeURIComponent(mall.name + ' ' + mall.location)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="no-underline hover:text-indigo-600 hover:underline transition-colors"
+                  >
+                    {mall.location}
+                  </a>
                 </div>
               </div>
               {mall.isPremium && <Badge variant="accent">Premium</Badge>}

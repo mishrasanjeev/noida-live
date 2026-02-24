@@ -73,7 +73,14 @@ export function DayTripsSection() {
               {/* Overlays */}
               <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
                 <div>
-                  <h3 className="text-white font-bold text-lg leading-tight drop-shadow">{trip.destination}</h3>
+                  <a
+                    href={`https://maps.google.com/?q=${encodeURIComponent(trip.destination + ' ' + trip.state + ' India')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white font-bold text-lg leading-tight drop-shadow no-underline hover:underline"
+                  >
+                    {trip.destination}
+                  </a>
                   <p className="text-white/80 text-xs">{trip.state}</p>
                 </div>
                 <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${categoryColors[trip.category]}`}>
@@ -85,10 +92,15 @@ export function DayTripsSection() {
             <div className="p-4">
               {/* Distance & time */}
               <div className="flex flex-wrap gap-3 mb-3 text-xs font-medium">
-                <span className="flex items-center gap-1.5 text-indigo-600">
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(trip.destination + ' ' + trip.state + ' India')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-indigo-600 no-underline hover:underline"
+                >
                   <MapPin size={12} />
                   {trip.distance}
-                </span>
+                </a>
                 <span className="flex items-center gap-1.5 text-slate-600">
                   <Clock size={12} />
                   {trip.driveTime}

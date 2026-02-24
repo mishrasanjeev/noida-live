@@ -66,10 +66,15 @@ export function EntertainmentSection() {
                 </div>
                 <StarRating rating={venue.rating} showValue />
               </div>
-              <div className="flex items-center gap-1 text-xs text-slate-500 mb-3">
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(venue.name + ' ' + venue.location)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs text-slate-500 mb-3 no-underline hover:text-indigo-600 hover:underline transition-colors"
+              >
                 <MapPin size={12} className="text-indigo-400 shrink-0" />
                 {venue.location}
-              </div>
+              </a>
               <p className="text-slate-600 text-sm leading-relaxed">{venue.description}</p>
             </div>
 

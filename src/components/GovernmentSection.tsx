@@ -36,10 +36,15 @@ export function GovernmentSection() {
 
             {/* Contact info */}
             <div className="border-t border-slate-100 pt-3 flex flex-col gap-1.5 text-xs text-slate-500">
-              <span className="flex items-center gap-2">
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(office.name + ' ' + office.location + ' Noida')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 no-underline hover:text-indigo-600 hover:underline transition-colors"
+              >
                 <MapPin size={12} className="text-indigo-400 shrink-0" />
                 {office.location}
-              </span>
+              </a>
               <div className="flex flex-wrap gap-x-4 gap-y-1.5">
                 <a
                   href={`tel:${office.phone.replace(/\s/g, '')}`}

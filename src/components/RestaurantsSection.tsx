@@ -72,7 +72,14 @@ export function RestaurantsSection() {
             {/* Location */}
             <div className="flex items-center gap-1 text-slate-500 text-sm">
               <MapPin size={12} />
-              <span>{restaurant.location}</span>
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(restaurant.name + ' ' + restaurant.location + ' Noida')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline hover:text-indigo-600 hover:underline transition-colors"
+              >
+                {restaurant.location}
+              </a>
             </div>
 
             {/* Rating */}

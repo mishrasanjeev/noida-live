@@ -69,7 +69,14 @@ export function SchoolsSection() {
             {/* Location */}
             <div className="flex items-center gap-1.5 text-slate-500 text-sm">
               <MapPin size={13} className="shrink-0" />
-              <span>{school.location}</span>
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(school.name + ' ' + school.location + ' Noida')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline hover:text-indigo-600 hover:underline transition-colors"
+              >
+                {school.location}
+              </a>
             </div>
 
             {/* Fees */}

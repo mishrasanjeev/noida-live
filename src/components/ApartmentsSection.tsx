@@ -76,7 +76,14 @@ export function ApartmentsSection() {
             {/* Location */}
             <div className="flex items-center gap-1 text-slate-500 text-sm">
               <MapPin size={12} />
-              <span>{apt.location}</span>
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(apt.name + ' ' + apt.location + ' Noida')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline hover:text-indigo-600 hover:underline transition-colors"
+              >
+                {apt.location}
+              </a>
             </div>
 
             {/* Price */}

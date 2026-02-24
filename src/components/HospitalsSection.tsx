@@ -59,7 +59,14 @@ export function HospitalsSection() {
             {/* Location */}
             <div className="flex items-center gap-1.5 text-slate-500 text-sm">
               <MapPin size={13} className="shrink-0" />
-              <span>{hospital.location}</span>
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(hospital.name + ' ' + hospital.location + ' Noida')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline hover:text-indigo-600 hover:underline transition-colors"
+              >
+                {hospital.location}
+              </a>
             </div>
 
             {/* Beds + Emergency */}

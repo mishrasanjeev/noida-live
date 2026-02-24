@@ -76,10 +76,15 @@ export function EventsSection() {
                   <CalendarDays size={14} className="text-indigo-400" />
                   {featured.dateRange}
                 </span>
-                <span className="flex items-center gap-1">
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(featured.name + ' ' + featured.location + ' Noida')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 no-underline hover:text-indigo-600 hover:underline transition-colors"
+                >
                   <MapPin size={14} className="text-indigo-400" />
                   {featured.location}
-                </span>
+                </a>
               </div>
               <p className="text-slate-600 text-sm leading-relaxed mb-4">{featured.description}</p>
               <div className="flex flex-wrap gap-2">
@@ -124,10 +129,15 @@ export function EventsSection() {
                     <CalendarDays size={12} />
                     {event.dateRange}
                   </span>
-                  <span className="flex items-center gap-1">
+                  <a
+                    href={`https://maps.google.com/?q=${encodeURIComponent(event.name + ' Noida ' + event.sector)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 no-underline hover:text-indigo-600 transition-colors"
+                  >
                     <MapPin size={12} />
                     {event.sector}
-                  </span>
+                  </a>
                 </div>
                 <p className="text-slate-600 text-xs leading-relaxed mb-3 line-clamp-2">{event.description}</p>
                 <div className="flex flex-wrap gap-1.5">
