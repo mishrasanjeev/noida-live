@@ -10,7 +10,7 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { label: 'Weather', href: '#weather', icon: '🌤️' },
   { label: 'News', href: '#news', icon: '📰' },
-  { label: 'Emergency', href: '#emergency', icon: '🚨' },
+  { label: 'SOS', href: '#emergency', icon: '🚨' },
   { label: 'Events', href: '#events', icon: '🎪' },
   { label: 'Offices', href: '#offices', icon: '🏢' },
   { label: 'Malls', href: '#malls', icon: '🛍️' },
@@ -21,9 +21,9 @@ const navLinks: NavLink[] = [
   { label: 'Sports', href: '#sports', icon: '⚽' },
   { label: 'Temples', href: '#religious', icon: '🛕' },
   { label: 'Homes', href: '#apartments', icon: '🏗️' },
-  { label: 'Hospitals', href: '#hospitals', icon: '🏥' },
+  { label: 'Health', href: '#hospitals', icon: '🏥' },
   { label: 'Schools', href: '#schools', icon: '🎓' },
-  { label: 'Connect', href: '#connectivity', icon: '🚇' },
+  { label: 'Transit', href: '#connectivity', icon: '🚇' },
   { label: 'Airport', href: '#jewar-airport', icon: '✈️' },
   { label: 'IT Parks', href: '#it-parks', icon: '💻' },
   { label: 'Govt.', href: '#government', icon: '🏛️' },
@@ -36,7 +36,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-4 h-14">
+        {/* Row 1: Logo + mobile hamburger */}
+        <div className="flex items-center gap-4 h-12">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 no-underline shrink-0">
             <span className="text-2xl">🏙️</span>
@@ -45,20 +46,6 @@ export function Header() {
               <span className="block text-xs text-indigo-600 font-medium tracking-wide">CITY DIRECTORY</span>
             </div>
           </a>
-
-          {/* Desktop nav — scrollable */}
-          <nav className="hidden md:flex flex-1 items-center gap-0.5 overflow-x-auto scrollbar-hide">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="flex items-center gap-1 px-2 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors no-underline whitespace-nowrap shrink-0"
-              >
-                <span>{link.icon}</span>
-                {link.label}
-              </a>
-            ))}
-          </nav>
 
           {/* Mobile hamburger */}
           <button
@@ -69,12 +56,26 @@ export function Header() {
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
+
+        {/* Row 2: Desktop nav — wrapping pills, always fully visible */}
+        <nav className="hidden md:flex flex-wrap gap-x-0.5 gap-y-0.5 pb-2">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors no-underline"
+            >
+              <span>{link.icon}</span>
+              {link.label}
+            </a>
+          ))}
+        </nav>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden border-t border-slate-100 bg-white max-h-[70vh] overflow-y-auto">
-          <nav className="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 gap-1">
+          <nav className="max-w-7xl mx-auto px-4 py-3 grid grid-cols-3 gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}

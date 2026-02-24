@@ -14,7 +14,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 3.5rem; /* 56px = sticky header height (h-14) */
+  scroll-padding-top: 5rem; /* 80px = h-12 logo row (48px) + nav row (~28px) + padding */
 }
 
 body {
