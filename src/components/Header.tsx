@@ -47,7 +47,7 @@ export function Header() {
           </a>
 
           {/* Desktop nav — scrollable */}
-          <nav className="hidden md:flex flex-1 items-center gap-0.5 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+          <nav className="hidden md:flex flex-1 items-center gap-0.5 overflow-x-auto scrollbar-hide">
             {navLinks.map((link) => (
               <a
                 key={link.href}

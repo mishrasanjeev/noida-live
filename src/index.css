@@ -28,3 +28,12 @@ body {
 * {
   box-sizing: border-box;
 }
+
+/* Hide scrollbar cross-browser (used on Header desktop nav) */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

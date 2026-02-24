@@ -43,7 +43,7 @@ export function ReligiousSection() {
           <button
             key={religion}
             onClick={() => setActive(religion)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+            className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium border transition-colors ${
               active === religion
                 ? 'bg-indigo-600 text-white border-indigo-600'
                 : 'bg-white text-slate-600 border-slate-200 hover:border-indigo-300'

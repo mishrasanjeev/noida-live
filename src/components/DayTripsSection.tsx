@@ -43,7 +43,7 @@ export function DayTripsSection() {
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+            className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium border transition-colors ${
               active === cat
                 ? 'bg-indigo-600 text-white border-indigo-600'
                 : 'bg-white text-slate-600 border-slate-200 hover:border-indigo-300'
@@ -123,7 +123,7 @@ export function DayTripsSection() {
               </div>
 
               {/* Best for & season */}
-              <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 pt-3 text-xs text-slate-500">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 border-t border-slate-100 pt-3 text-xs text-slate-500">
                 <div className="flex flex-wrap gap-1">
                   {trip.bestFor.slice(0, 2).map((b) => (
                     <Badge key={b} variant="info">{b}</Badge>

@@ -37,7 +37,7 @@ export function EventsSection() {
           <button
             key={type}
             onClick={() => setActive(type)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+            className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium border transition-colors ${
               active === type
                 ? 'bg-indigo-600 text-white border-indigo-600'
                 : 'bg-white text-slate-600 border-slate-200 hover:border-indigo-300'
@@ -52,7 +52,7 @@ export function EventsSection() {
       {featured && (
         <div className="mb-8 rounded-2xl overflow-hidden shadow-md border border-slate-100 bg-white">
           <div className="flex flex-col lg:flex-row">
-            <div className="relative lg:w-1/2 h-64 lg:h-auto overflow-hidden">
+            <div className="relative lg:w-1/2 h-48 sm:h-60 lg:h-auto overflow-hidden">
               <img
                 src={featured.imageUrl}
                 alt={featured.name}
