@@ -168,3 +168,119 @@ export interface ITpark {
   description: string;
   highlights: string[];
 }
+
+// Events & Festivals types
+export interface NoidaEvent {
+  id: string;
+  name: string;
+  type: 'Cultural' | 'Sports' | 'Religious' | 'Commercial' | 'Music' | 'Food';
+  month: string;
+  dateRange: string;
+  location: string;
+  sector: string;
+  description: string;
+  imageUrl: string;
+  highlights: string[];
+  isFeatured?: boolean;
+}
+
+// Emergency contacts
+export interface EmergencyContact {
+  id: string;
+  name: string;
+  number: string;
+  altNumber?: string;
+  type: 'Police' | 'Medical' | 'Fire' | 'Utility' | 'Women' | 'Child' | 'Control Room' | 'Cyber';
+  available: '24x7' | 'Office Hours';
+  icon: string;
+  description: string;
+}
+
+// Government services
+export interface GovernmentOffice {
+  id: string;
+  name: string;
+  department: string;
+  location: string;
+  sector: string;
+  services: string[];
+  phone: string;
+  timings: string;
+  website?: string;
+  description: string;
+}
+
+// Entertainment venues
+export interface EntertainmentVenue {
+  id: string;
+  name: string;
+  type: 'Cinema' | 'Amusement Park' | 'Gaming' | 'Bowling' | 'Club' | 'Comedy';
+  location: string;
+  sector: string;
+  highlights: string[];
+  timings: string;
+  priceRange: string;
+  rating: number;
+  phone?: string;
+  description: string;
+}
+
+// Local markets & bazaars
+export interface LocalMarket {
+  id: string;
+  name: string;
+  type: 'Weekly Bazaar' | 'Daily Market' | 'Shopping Complex' | 'Specialty';
+  location: string;
+  sector: string;
+  timings: string;
+  highlights: string[];
+  popularFor: string[];
+  day?: string;
+  description: string;
+}
+
+// Sports & recreation
+export interface SportsFacility {
+  id: string;
+  name: string;
+  type: 'Stadium' | 'Sports Complex' | 'Golf' | 'Swimming' | 'Gym' | 'Club';
+  location: string;
+  sector: string;
+  sports: string[];
+  timings: string;
+  membershipFee?: string;
+  highlights: string[];
+  phone?: string;
+  description: string;
+}
+
+// Religious places
+export interface ReligiousPlace {
+  id: string;
+  name: string;
+  religion: 'Hindu' | 'Muslim' | 'Christian' | 'Sikh' | 'Jain';
+  deity?: string;
+  location: string;
+  sector: string;
+  timings: string;
+  festivals: string[];
+  highlights: string[];
+  established?: string;
+  description: string;
+}
+
+// Day trips
+export interface DayTrip {
+  id: string;
+  destination: string;
+  state: string;
+  distance: string;
+  driveTime: string;
+  trainAvailable: boolean;
+  description: string;
+  highlights: string[];
+  bestFor: string[];
+  bestSeason: string;
+  imageUrl: string;
+  category: 'Heritage' | 'Nature' | 'Pilgrimage' | 'Hill Station' | 'City';
+}

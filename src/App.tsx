@@ -13,7 +13,61 @@ import { SchoolsSection } from './components/SchoolsSection';
 import { ConnectivitySection } from './components/ConnectivitySection';
 import { JewarAirportSection } from './components/JewarAirportSection';
 import { ITParkSection } from './components/ITParkSection';
+import { EventsSection } from './components/EventsSection';
+import { EmergencySection } from './components/EmergencySection';
+import { GovernmentSection } from './components/GovernmentSection';
+import { EntertainmentSection } from './components/EntertainmentSection';
+import { MarketsSection } from './components/MarketsSection';
+import { SportsSection } from './components/SportsSection';
+import { ReligiousSection } from './components/ReligiousSection';
+import { DayTripsSection } from './components/DayTripsSection';
 import { useVisitorCount } from './hooks/useVisitorCount';
+
+const heroLinks = [
+  { href: '#weather', label: '🌤️ Weather' },
+  { href: '#news', label: '📰 News' },
+  { href: '#emergency', label: '🚨 Emergency' },
+  { href: '#events', label: '🎪 Events' },
+  { href: '#offices', label: '🏢 Offices' },
+  { href: '#malls', label: '🛍️ Malls' },
+  { href: '#restaurants', label: '🍽️ Food' },
+  { href: '#markets', label: '🛒 Markets' },
+  { href: '#places', label: '📍 Places' },
+  { href: '#entertainment', label: '🎬 Fun' },
+  { href: '#sports', label: '⚽ Sports' },
+  { href: '#religious', label: '🛕 Temples' },
+  { href: '#apartments', label: '🏗️ Apartments' },
+  { href: '#hospitals', label: '🏥 Hospitals' },
+  { href: '#schools', label: '🎓 Schools' },
+  { href: '#connectivity', label: '🚇 Connect' },
+  { href: '#jewar-airport', label: '✈️ Airport' },
+  { href: '#it-parks', label: '💻 IT Parks' },
+  { href: '#government', label: '🏛️ Govt.' },
+  { href: '#day-trips', label: '🗺️ Day Trips' },
+];
+
+const footerLinks = [
+  { href: '#weather', label: 'Live Weather' },
+  { href: '#news', label: 'News & Media' },
+  { href: '#emergency', label: 'Emergency Helplines' },
+  { href: '#events', label: 'Events & Festivals' },
+  { href: '#offices', label: 'Office Spaces' },
+  { href: '#malls', label: 'Shopping Malls' },
+  { href: '#restaurants', label: 'Restaurants & Food' },
+  { href: '#markets', label: 'Local Markets' },
+  { href: '#places', label: 'Places to Visit' },
+  { href: '#entertainment', label: 'Entertainment' },
+  { href: '#sports', label: 'Sports & Recreation' },
+  { href: '#religious', label: 'Temples & Worship' },
+  { href: '#apartments', label: 'Apartments' },
+  { href: '#hospitals', label: 'Hospitals & Medical' },
+  { href: '#schools', label: 'Schools & Education' },
+  { href: '#connectivity', label: 'Connectivity' },
+  { href: '#jewar-airport', label: 'Jewar Airport' },
+  { href: '#it-parks', label: 'IT Parks' },
+  { href: '#government', label: 'Government Services' },
+  { href: '#day-trips', label: 'Day Trips' },
+];
 
 function App() {
   const visitorCount = useVisitorCount();
@@ -32,28 +86,15 @@ function App() {
             🏙️ Noida City Directory
           </h1>
           <p className="text-indigo-200 text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Your one-stop guide to weather, news, workspaces, malls, restaurants, and must-visit
-            places in the City of the Future.
+            Your complete guide to weather, events, emergency contacts, dining, entertainment,
+            worship, sports, and everything that makes Noida the City of the Future.
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
-            {[
-              { href: '#weather', label: '🌤️ Weather' },
-              { href: '#news', label: '📰 News' },
-              { href: '#offices', label: '🏢 Offices' },
-              { href: '#malls', label: '🛍️ Malls' },
-              { href: '#restaurants', label: '🍽️ Food' },
-              { href: '#places', label: '📍 Places' },
-              { href: '#apartments', label: '🏗️ Apartments' },
-              { href: '#hospitals', label: '🏥 Hospitals' },
-              { href: '#schools', label: '🎓 Schools' },
-              { href: '#connectivity', label: '🚇 Connect' },
-              { href: '#jewar-airport', label: '✈️ Airport' },
-              { href: '#it-parks', label: '💻 IT Parks' },
-            ].map(({ href, label }) => (
+          <div className="flex flex-wrap justify-center gap-2 mt-8">
+            {heroLinks.map(({ href, label }) => (
               <a
                 key={href}
                 href={href}
-                className="px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium hover:bg-white/25 transition-colors no-underline"
+                className="px-3 sm:px-4 py-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium hover:bg-white/25 transition-colors no-underline"
               >
                 {label}
               </a>
@@ -64,29 +105,58 @@ function App() {
 
       {/* Main content */}
       <main>
+        {/* Essential info */}
         <WeatherWidget />
         <div className="bg-white">
           <NewsSection />
         </div>
+        <EmergencySection />
+
+        {/* Events & culture */}
+        <div className="bg-white">
+          <EventsSection />
+        </div>
+
+        {/* Work & Commerce */}
         <OfficesSection />
         <div className="bg-white">
           <MallsSection />
         </div>
         <RestaurantsSection />
         <div className="bg-white">
-          <PlacesSection />
+          <MarketsSection />
         </div>
+
+        {/* Leisure */}
+        <PlacesSection />
+        <div className="bg-white">
+          <EntertainmentSection />
+        </div>
+        <SportsSection />
+        <div className="bg-white">
+          <ReligiousSection />
+        </div>
+
+        {/* Living */}
         <ApartmentsSection />
         <div className="bg-white">
           <HospitalsSection />
         </div>
         <SchoolsSection />
+
+        {/* Infrastructure */}
         <div className="bg-white">
           <ConnectivitySection />
         </div>
         <JewarAirportSection />
         <div className="bg-white">
           <ITParkSection />
+        </div>
+
+        {/* Services & beyond */}
+        <GovernmentSection />
+        <div className="bg-white">
+          <DayTripsSection />
         </div>
       </main>
 
@@ -103,27 +173,14 @@ function App() {
                 </div>
               </div>
               <p className="text-slate-400 text-sm leading-relaxed">
-                A comprehensive guide to living, working, and exploring Noida — the City of the Future.
+                The most comprehensive guide to living, working, exploring, and thriving in Noida — the City of the Future.
               </p>
             </div>
 
-            <div>
-              <h4 className="font-semibold text-slate-200 mb-3">Sections</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                {[
-                  { href: '#weather', label: 'Live Weather' },
-                  { href: '#news', label: 'News & Media' },
-                  { href: '#offices', label: 'Office Spaces' },
-                  { href: '#malls', label: 'Shopping Malls' },
-                  { href: '#restaurants', label: 'Eating Joints' },
-                  { href: '#places', label: 'Places to Visit' },
-                  { href: '#apartments', label: 'Apartments' },
-                  { href: '#hospitals', label: 'Hospitals & Medical' },
-                  { href: '#schools', label: 'Schools & Education' },
-                  { href: '#connectivity', label: 'Connectivity' },
-                  { href: '#jewar-airport', label: 'Jewar Airport' },
-                  { href: '#it-parks', label: 'IT Parks' },
-                ].map(({ href, label }) => (
+            <div className="md:col-span-2">
+              <h4 className="font-semibold text-slate-200 mb-3">All Sections</h4>
+              <ul className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-1.5 text-sm text-slate-400">
+                {footerLinks.map(({ href, label }) => (
                   <li key={href}>
                     <a href={href} className="hover:text-indigo-400 transition-colors no-underline">
                       {label}
@@ -132,18 +189,10 @@ function App() {
                 ))}
               </ul>
             </div>
-
-            <div>
-              <h4 className="font-semibold text-slate-200 mb-3">About Noida</h4>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Noida (New Okhla Industrial Development Authority) is a planned city in Gautam Buddha Nagar
-                district, Uttar Pradesh. It is a major IT and business hub in the NCR region.
-              </p>
-            </div>
           </div>
 
           <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-            <p>Weather data by <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 no-underline">Open-Meteo</a> — free &amp; open-source</p>
+            <p>Weather by <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 no-underline">Open-Meteo</a> · Images by <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300 no-underline">Unsplash</a></p>
             <div className="flex items-center gap-4">
               {typeof visitorCount === 'number' && (
                 <p className="flex items-center gap-1.5">
