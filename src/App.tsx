@@ -26,6 +26,7 @@ import { NearMeSection } from './components/NearMeSection';
 import { useVisitorCount } from './hooks/useVisitorCount';
 import { SearchBar } from './components/SearchBar';
 import { SearchAnalyticsPanel } from './components/SearchAnalyticsPanel';
+import { SplashScreen } from './components/SplashScreen';
 
 const heroLinks = [
   { href: '#weather', label: '🌤️ Weather' },
@@ -82,6 +83,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-100">
+      <SplashScreen />
       <SearchAnalyticsPanel />
       <Header />
 
