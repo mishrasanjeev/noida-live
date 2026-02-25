@@ -23,6 +23,7 @@ import { ReligiousSection } from './components/ReligiousSection';
 import { DayTripsSection } from './components/DayTripsSection';
 import { useVisitorCount } from './hooks/useVisitorCount';
 import { SearchBar } from './components/SearchBar';
+import { SearchAnalyticsPanel } from './components/SearchAnalyticsPanel';
 
 const heroLinks = [
   { href: '#weather', label: '🌤️ Weather' },
@@ -75,6 +76,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-100">
+      <SearchAnalyticsPanel />
       <Header />
 
       {/* Hero */}

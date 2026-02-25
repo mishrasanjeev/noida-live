@@ -32,6 +32,14 @@ const searchIndex: SearchItem[] = [
 ];
 
 function saveUnmatchedSearch(query: string) {
+  // 1. Fire GA4 custom event (visible in Analytics → Events as "search_not_found")
+  try {
+    gtag('event', 'search_not_found', { search_term: query });
+  } catch {
+    // gtag not available
+  }
+
+  // 2. Persist to localStorage for the admin panel
   try {
     const key = 'noida_unmatched_searches';
     const existing: { query: string; ts: number }[] = JSON.parse(localStorage.getItem(key) ?? '[]');
