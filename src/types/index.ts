@@ -288,6 +288,22 @@ export interface ReligiousPlace {
   description: string;
 }
 
+// Hostel & PG accommodation
+export interface HostelPG {
+  id: string;
+  name: string;
+  type: 'PG' | 'Hostel' | 'Co-living';
+  gender: 'Male' | 'Female' | 'Co-ed';
+  location: string;
+  sector: string;
+  priceRange: string;
+  amenities: string[];
+  foodIncluded: boolean;
+  phone?: string;
+  rating: number;
+  description: string;
+}
+
 // Near Me places
 export interface NearMePlace {
   id: string;

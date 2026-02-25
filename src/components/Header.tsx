@@ -22,6 +22,7 @@ const navLinks: NavLink[] = [
   { label: 'Sports', href: '#sports', icon: '⚽' },
   { label: 'Temples', href: '#religious', icon: '🛕' },
   { label: 'Homes', href: '#apartments', icon: '🏗️' },
+  { label: 'PG/Hostel', href: '#hostels', icon: '🏠' },
   { label: 'Health', href: '#hospitals', icon: '🏥' },
   { label: 'Schools', href: '#schools', icon: '🎓' },
   { label: 'Transit', href: '#connectivity', icon: '🚇' },

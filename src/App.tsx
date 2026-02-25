@@ -6,6 +6,7 @@ import { NewsSection } from './components/NewsSection';
 import { OfficesSection } from './components/OfficesSection';
 import { PlacesSection } from './components/PlacesSection';
 import { ApartmentsSection } from './components/ApartmentsSection';
+import { HostelSection } from './components/HostelSection';
 import { RestaurantsSection } from './components/RestaurantsSection';
 import { WeatherWidget } from './components/WeatherWidget';
 import { HospitalsSection } from './components/HospitalsSection';
@@ -40,6 +41,7 @@ const heroLinks = [
   { href: '#sports', label: '⚽ Sports' },
   { href: '#religious', label: '🛕 Temples' },
   { href: '#apartments', label: '🏗️ Apartments' },
+  { href: '#hostels', label: '🏠 PG & Hostels' },
   { href: '#hospitals', label: '🏥 Hospitals' },
   { href: '#schools', label: '🎓 Schools' },
   { href: '#near-me', label: '🧭 Near Me' },
@@ -64,6 +66,7 @@ const footerLinks = [
   { href: '#sports', label: 'Sports & Recreation' },
   { href: '#religious', label: 'Temples & Worship' },
   { href: '#apartments', label: 'Apartments' },
+  { href: '#hostels', label: 'PG & Hostels' },
   { href: '#hospitals', label: 'Hospitals & Medical' },
   { href: '#schools', label: 'Schools & Education' },
   { href: '#near-me', label: 'Near Me' },
@@ -152,9 +155,12 @@ function App() {
         {/* Living */}
         <ApartmentsSection />
         <div className="bg-white">
-          <HospitalsSection />
+          <HostelSection />
         </div>
-        <SchoolsSection />
+        <HospitalsSection />
+        <div className="bg-white">
+          <SchoolsSection />
+        </div>
         <NearMeSection />
 
         {/* Infrastructure */}
