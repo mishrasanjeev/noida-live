@@ -1,6 +1,7 @@
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Download, Bell, BellOff } from 'lucide-react';
 import { useState } from 'react';
 import { useInstallPrompt } from '../hooks/useInstallPrompt';
+import { useOneSignal } from '../hooks/useOneSignal';
 
 interface NavLink {
   label: string;
@@ -37,6 +38,7 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [iosTooltip, setIosTooltip] = useState(false);
   const { canInstall, isIos, isInstalled, install } = useInstallPrompt();
+  const { state: notifState, subscribe, unsubscribe } = useOneSignal();
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
@@ -60,6 +62,25 @@ export function Header() {
             <span>🧭</span>
             Near Me
           </a>
+
+          {/* Notification bell — hidden when unsupported or still loading */}
+          {notifState !== 'unsupported' && notifState !== 'loading' && (
+            <button
+              onClick={notifState === 'subscribed' ? unsubscribe : subscribe}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-colors shadow-sm shrink-0 ${
+                notifState === 'subscribed'
+                  ? 'bg-indigo-50 border border-indigo-200 text-indigo-700 hover:bg-red-50 hover:border-red-200 hover:text-red-600'
+                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-indigo-50 hover:border-indigo-200 hover:text-indigo-700'
+              }`}
+              aria-label={notifState === 'subscribed' ? 'Unsubscribe from notifications' : 'Enable push notifications'}
+              title={notifState === 'subscribed' ? 'Notifications on — tap to turn off' : 'Get alerts for Noida news & events'}
+            >
+              {notifState === 'subscribed' ? <Bell size={13} /> : <BellOff size={13} />}
+              <span className="hidden sm:inline">
+                {notifState === 'subscribed' ? 'Notifs On' : 'Notify Me'}
+              </span>
+            </button>
+          )}
 
           {/* Install App button — Android: native prompt / iOS: tooltip / hidden if installed */}
           {!isInstalled && (canInstall || isIos) && (
