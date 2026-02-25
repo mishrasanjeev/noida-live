@@ -32,7 +32,6 @@ const navLinks: NavLink[] = [
   { label: 'IT Parks', href: '#it-parks', icon: '💻' },
   { label: 'Govt.', href: '#government', icon: '🏛️' },
   { label: 'Trips', href: '#day-trips', icon: '🗺️' },
-  { label: 'Feedback', href: '#feedback', icon: '📬' },
 ];
 
 export function Header() {

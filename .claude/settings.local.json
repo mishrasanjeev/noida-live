@@ -1,7 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "Bash(powershell.exe:*)"
+      "Bash(powershell.exe:*)",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:api.unsplash.com)",
+      "Bash(curl:*)",
+      "Bash(cd /c/Projects/AIwork && gh run list --limit 5 2>&1)",
+      "Bash(cd:*)",
+      "Bash(cd /c/Projects/AIwork && npm run build 2>&1)",
+      "Bash(cd /c/Projects/AIwork && npx pwa-assets-generator --preset minimal public/favicon.svg 2>&1)",
+      "Bash(cd /c/Projects/AIwork && git push noida-live master 2>&1)"
     ]
   }
 }

@@ -22,7 +22,6 @@ import { MarketsSection } from './components/MarketsSection';
 import { SportsSection } from './components/SportsSection';
 import { ReligiousSection } from './components/ReligiousSection';
 import { DayTripsSection } from './components/DayTripsSection';
-import { FeedbackSection } from './components/FeedbackSection';
 import { NearMeSection } from './components/NearMeSection';
 import { useVisitorCount } from './hooks/useVisitorCount';
 import { SearchBar } from './components/SearchBar';
@@ -52,7 +51,6 @@ const heroLinks = [
   { href: '#it-parks', label: '💻 IT Parks' },
   { href: '#government', label: '🏛️ Govt.' },
   { href: '#day-trips', label: '🗺️ Day Trips' },
-  { href: '#feedback', label: '📬 Feedback' },
 ];
 
 const footerLinks = [
@@ -78,7 +76,6 @@ const footerLinks = [
   { href: '#it-parks', label: 'IT Parks' },
   { href: '#government', label: 'Government Services' },
   { href: '#day-trips', label: 'Day Trips' },
-  { href: '#feedback', label: 'Contact & Feedback' },
 ];
 
 function App() {
@@ -182,7 +179,6 @@ function App() {
         <div className="bg-white">
           <DayTripsSection />
         </div>
-        <FeedbackSection />
       </main>
 
       {/* Footer */}
