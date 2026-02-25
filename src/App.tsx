@@ -155,9 +155,7 @@ function App() {
           <HospitalsSection />
         </div>
         <SchoolsSection />
-        <div className="bg-white">
-          <NearMeSection />
-        </div>
+        <NearMeSection />
 
         {/* Infrastructure */}
         <div className="bg-white">
