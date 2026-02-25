@@ -22,6 +22,7 @@ import { SportsSection } from './components/SportsSection';
 import { ReligiousSection } from './components/ReligiousSection';
 import { DayTripsSection } from './components/DayTripsSection';
 import { useVisitorCount } from './hooks/useVisitorCount';
+import { SearchBar } from './components/SearchBar';
 
 const heroLinks = [
   { href: '#weather', label: '🌤️ Weather' },
@@ -83,13 +84,19 @@ function App() {
             Uttar Pradesh, India
           </p>
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
-            🏙️ Noida City Directory
+            🏙️ Noida Live
           </h1>
-          <p className="text-indigo-200 text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Your complete guide to weather, events, emergency contacts, dining, entertainment,
-            worship, sports, and everything that makes Noida the City of the Future.
+          <p className="text-indigo-200 text-base md:text-xl max-w-2xl mx-auto leading-relaxed mb-8">
+            Your complete city directory — restaurants, hospitals, schools, malls, IT parks,
+            events, metro routes and everything live in Noida.
           </p>
-          <div className="flex flex-wrap justify-center gap-2 mt-8">
+
+          {/* Search bar */}
+          <div className="mb-8 px-2">
+            <SearchBar />
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-2">
             {heroLinks.map(({ href, label }) => (
               <a
                 key={href}
