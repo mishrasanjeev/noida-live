@@ -11,22 +11,32 @@ import {
   autoPlaces,
   metroPlaces,
   restaurantPlaces,
+  hospitalNearPlaces,
+  parkPlaces,
+  salonPlaces,
+  courierPlaces,
+  evChargingPlaces,
   distanceKm,
 } from '../data/nearme';
 import type { NearMePlace } from '../types';
 
-type Category = 'parking' | 'gym' | 'petrol' | 'medical' | 'atm' | 'grocery' | 'auto' | 'metro' | 'restaurant';
+type Category = 'parking' | 'gym' | 'petrol' | 'medical' | 'atm' | 'grocery' | 'auto' | 'metro' | 'restaurant' | 'hospital' | 'park' | 'salon' | 'courier' | 'ev';
 
 const CATEGORIES: { id: Category; label: string; icon: string; data: NearMePlace[] }[] = [
-  { id: 'metro', label: 'Metro', icon: '🚇', data: metroPlaces },
+  { id: 'metro',      label: 'Metro',      icon: '🚇', data: metroPlaces },
   { id: 'restaurant', label: 'Food & Café', icon: '🍽️', data: restaurantPlaces },
-  { id: 'parking', label: 'Parking', icon: '🅿️', data: parkingPlaces },
-  { id: 'atm', label: 'ATM', icon: '🏧', data: atmPlaces },
-  { id: 'petrol', label: 'Petrol', icon: '⛽', data: petrolPlaces },
-  { id: 'grocery', label: 'Grocery', icon: '🛒', data: groceryPlaces },
-  { id: 'medical', label: 'Medical', icon: '💊', data: medicalPlaces },
-  { id: 'gym', label: 'Gym', icon: '💪', data: gymPlaces },
-  { id: 'auto', label: 'Auto/Cab', icon: '🚖', data: autoPlaces },
+  { id: 'atm',        label: 'ATM',        icon: '🏧', data: atmPlaces },
+  { id: 'hospital',   label: 'Hospital',   icon: '🏥', data: hospitalNearPlaces },
+  { id: 'parking',    label: 'Parking',    icon: '🅿️', data: parkingPlaces },
+  { id: 'petrol',     label: 'Petrol',     icon: '⛽', data: petrolPlaces },
+  { id: 'grocery',    label: 'Grocery',    icon: '🛒', data: groceryPlaces },
+  { id: 'park',       label: 'Park',       icon: '🌳', data: parkPlaces },
+  { id: 'salon',      label: 'Salon',      icon: '💈', data: salonPlaces },
+  { id: 'medical',    label: 'Pharmacy',   icon: '💊', data: medicalPlaces },
+  { id: 'courier',    label: 'Courier',    icon: '📦', data: courierPlaces },
+  { id: 'auto',       label: 'Auto/Cab',   icon: '🚖', data: autoPlaces },
+  { id: 'ev',         label: 'EV Charge',  icon: '⚡', data: evChargingPlaces },
+  { id: 'gym',        label: 'Gym',        icon: '💪', data: gymPlaces },
 ];
 
 function formatDistance(km: number): string {
@@ -115,7 +125,7 @@ export function NearMeSection() {
         </div>
 
         {/* Category grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-9 gap-2 sm:gap-3 mb-10">
+        <div className="grid grid-cols-4 sm:grid-cols-7 gap-2 sm:gap-3 mb-10">
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
