@@ -21,6 +21,7 @@ import { MarketsSection } from './components/MarketsSection';
 import { SportsSection } from './components/SportsSection';
 import { ReligiousSection } from './components/ReligiousSection';
 import { DayTripsSection } from './components/DayTripsSection';
+import { NearMeSection } from './components/NearMeSection';
 import { useVisitorCount } from './hooks/useVisitorCount';
 import { SearchBar } from './components/SearchBar';
 import { SearchAnalyticsPanel } from './components/SearchAnalyticsPanel';
@@ -41,6 +42,7 @@ const heroLinks = [
   { href: '#apartments', label: '🏗️ Apartments' },
   { href: '#hospitals', label: '🏥 Hospitals' },
   { href: '#schools', label: '🎓 Schools' },
+  { href: '#near-me', label: '🧭 Near Me' },
   { href: '#connectivity', label: '🚇 Connect' },
   { href: '#jewar-airport', label: '✈️ Airport' },
   { href: '#it-parks', label: '💻 IT Parks' },
@@ -64,6 +66,7 @@ const footerLinks = [
   { href: '#apartments', label: 'Apartments' },
   { href: '#hospitals', label: 'Hospitals & Medical' },
   { href: '#schools', label: 'Schools & Education' },
+  { href: '#near-me', label: 'Near Me' },
   { href: '#connectivity', label: 'Connectivity' },
   { href: '#jewar-airport', label: 'Jewar Airport' },
   { href: '#it-parks', label: 'IT Parks' },
@@ -152,6 +155,9 @@ function App() {
           <HospitalsSection />
         </div>
         <SchoolsSection />
+        <div className="bg-white">
+          <NearMeSection />
+        </div>
 
         {/* Infrastructure */}
         <div className="bg-white">

@@ -23,6 +23,7 @@ const navLinks: NavLink[] = [
   { label: 'Homes', href: '#apartments', icon: '🏗️' },
   { label: 'Health', href: '#hospitals', icon: '🏥' },
   { label: 'Schools', href: '#schools', icon: '🎓' },
+  { label: 'Near Me', href: '#near-me', icon: '🧭' },
   { label: 'Transit', href: '#connectivity', icon: '🚇' },
   { label: 'Airport', href: '#jewar-airport', icon: '✈️' },
   { label: 'IT Parks', href: '#it-parks', icon: '💻' },

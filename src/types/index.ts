@@ -269,6 +269,18 @@ export interface ReligiousPlace {
   description: string;
 }
 
+// Near Me places
+export interface NearMePlace {
+  id: string;
+  name: string;
+  address: string;
+  sector: string;
+  lat: number;
+  lng: number;
+  phone?: string;
+  hours?: string;
+}
+
 // Day trips
 export interface DayTrip {
   id: string;
