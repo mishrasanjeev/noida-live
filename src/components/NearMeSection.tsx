@@ -10,14 +10,16 @@ import {
   groceryPlaces,
   autoPlaces,
   metroPlaces,
+  restaurantPlaces,
   distanceKm,
 } from '../data/nearme';
 import type { NearMePlace } from '../types';
 
-type Category = 'parking' | 'gym' | 'petrol' | 'medical' | 'atm' | 'grocery' | 'auto' | 'metro';
+type Category = 'parking' | 'gym' | 'petrol' | 'medical' | 'atm' | 'grocery' | 'auto' | 'metro' | 'restaurant';
 
 const CATEGORIES: { id: Category; label: string; icon: string; data: NearMePlace[] }[] = [
   { id: 'metro', label: 'Metro', icon: '🚇', data: metroPlaces },
+  { id: 'restaurant', label: 'Food & Café', icon: '🍽️', data: restaurantPlaces },
   { id: 'parking', label: 'Parking', icon: '🅿️', data: parkingPlaces },
   { id: 'atm', label: 'ATM', icon: '🏧', data: atmPlaces },
   { id: 'petrol', label: 'Petrol', icon: '⛽', data: petrolPlaces },
@@ -113,7 +115,7 @@ export function NearMeSection() {
         </div>
 
         {/* Category grid */}
-        <div className="grid grid-cols-4 sm:grid-cols-8 gap-2 sm:gap-3 mb-10">
+        <div className="grid grid-cols-3 sm:grid-cols-9 gap-2 sm:gap-3 mb-10">
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
