@@ -9,13 +9,15 @@ import {
   atmPlaces,
   groceryPlaces,
   autoPlaces,
+  metroPlaces,
   distanceKm,
 } from '../data/nearme';
 import type { NearMePlace } from '../types';
 
-type Category = 'parking' | 'gym' | 'petrol' | 'medical' | 'atm' | 'grocery' | 'auto';
+type Category = 'parking' | 'gym' | 'petrol' | 'medical' | 'atm' | 'grocery' | 'auto' | 'metro';
 
 const CATEGORIES: { id: Category; label: string; icon: string; data: NearMePlace[] }[] = [
+  { id: 'metro', label: 'Metro', icon: '🚇', data: metroPlaces },
   { id: 'parking', label: 'Parking', icon: '🅿️', data: parkingPlaces },
   { id: 'atm', label: 'ATM', icon: '🏧', data: atmPlaces },
   { id: 'petrol', label: 'Petrol', icon: '⛽', data: petrolPlaces },
@@ -32,7 +34,7 @@ function formatDistance(km: number): string {
 
 export function NearMeSection() {
   const { state, request } = useGeolocation();
-  const [activeCategory, setActiveCategory] = useState<Category>('parking');
+  const [activeCategory, setActiveCategory] = useState<Category>('metro');
 
   const activeCat = CATEGORIES.find((c) => c.id === activeCategory)!;
   const userLat = state.status === 'success' ? state.lat : null;
@@ -111,7 +113,7 @@ export function NearMeSection() {
         </div>
 
         {/* Category grid */}
-        <div className="grid grid-cols-4 sm:grid-cols-7 gap-2 sm:gap-3 mb-10">
+        <div className="grid grid-cols-4 sm:grid-cols-8 gap-2 sm:gap-3 mb-10">
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
