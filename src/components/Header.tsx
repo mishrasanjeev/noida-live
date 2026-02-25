@@ -1,5 +1,6 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { useState } from 'react';
+import { useInstallPrompt } from '../hooks/useInstallPrompt';
 
 interface NavLink {
   label: string;
@@ -34,6 +35,8 @@ const navLinks: NavLink[] = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [iosTooltip, setIosTooltip] = useState(false);
+  const { canInstall, isIos, isInstalled, install } = useInstallPrompt();
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
@@ -57,6 +60,41 @@ export function Header() {
             <span>🧭</span>
             Near Me
           </a>
+
+          {/* Install App button — Android: native prompt / iOS: tooltip / hidden if installed */}
+          {!isInstalled && (canInstall || isIos) && (
+            <div className="relative shrink-0">
+              <button
+                onClick={() => {
+                  if (isIos) setIosTooltip((v) => !v);
+                  else install();
+                }}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-indigo-200 text-indigo-700 text-xs font-semibold hover:bg-indigo-50 transition-colors shadow-sm shrink-0"
+                aria-label="Install Noida Live app"
+              >
+                <Download size={13} />
+                Install App
+              </button>
+
+              {/* iOS instruction tooltip */}
+              {isIos && iosTooltip && (
+                <div className="absolute right-0 top-full mt-2 w-64 bg-slate-900 text-white text-xs rounded-2xl p-4 shadow-xl z-50">
+                  <p className="font-semibold mb-1">Install on iPhone / iPad</p>
+                  <ol className="list-decimal list-inside space-y-1 text-slate-300 leading-relaxed">
+                    <li>Tap the <span className="text-white font-medium">Share</span> button (□↑) in Safari</li>
+                    <li>Scroll down and tap <span className="text-white font-medium">Add to Home Screen</span></li>
+                    <li>Tap <span className="text-white font-medium">Add</span></li>
+                  </ol>
+                  <button
+                    onClick={() => setIosTooltip(false)}
+                    className="mt-3 text-indigo-300 hover:text-white text-[11px]"
+                  >
+                    Got it ✕
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Mobile hamburger */}
           <button
