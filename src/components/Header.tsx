@@ -7,6 +7,7 @@ interface NavLink {
   icon: string;
 }
 
+// Near Me is rendered separately as a featured button — not in this list
 const navLinks: NavLink[] = [
   { label: 'Weather', href: '#weather', icon: '🌤️' },
   { label: 'News', href: '#news', icon: '📰' },
@@ -23,7 +24,6 @@ const navLinks: NavLink[] = [
   { label: 'Homes', href: '#apartments', icon: '🏗️' },
   { label: 'Health', href: '#hospitals', icon: '🏥' },
   { label: 'Schools', href: '#schools', icon: '🎓' },
-  { label: 'Near Me', href: '#near-me', icon: '🧭' },
   { label: 'Transit', href: '#connectivity', icon: '🚇' },
   { label: 'Airport', href: '#jewar-airport', icon: '✈️' },
   { label: 'IT Parks', href: '#it-parks', icon: '💻' },
@@ -37,8 +37,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Row 1: Logo + mobile hamburger */}
-        <div className="flex items-center gap-4 h-12">
+        {/* Row 1: Logo + Near Me CTA + mobile hamburger */}
+        <div className="flex items-center gap-3 h-12">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 no-underline shrink-0">
             <span className="text-2xl">🏙️</span>
@@ -48,10 +48,19 @@ export function Header() {
             </div>
           </a>
 
+          {/* Near Me — always visible, prominent CTA */}
+          <a
+            href="#near-me"
+            className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition-colors no-underline shadow-sm shadow-indigo-200 shrink-0"
+          >
+            <span>🧭</span>
+            Near Me
+          </a>
+
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden ml-auto p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
+            className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -60,6 +69,14 @@ export function Header() {
 
         {/* Row 2: Desktop nav — wrapping pills, always fully visible */}
         <nav className="hidden md:flex flex-wrap gap-x-0.5 gap-y-0.5 pb-2">
+          {/* Near Me highlighted first in desktop nav too */}
+          <a
+            href="#near-me"
+            className="flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors no-underline mr-1"
+          >
+            <span>🧭</span>
+            Near Me
+          </a>
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -77,6 +94,15 @@ export function Header() {
       {mobileOpen && (
         <div className="md:hidden border-t border-slate-100 bg-white max-h-[70vh] overflow-y-auto">
           <nav className="max-w-7xl mx-auto px-4 py-3 grid grid-cols-3 gap-1">
+            {/* Near Me — first slot, full-width, highlighted */}
+            <a
+              href="#near-me"
+              onClick={() => setMobileOpen(false)}
+              className="col-span-3 flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors no-underline mb-1"
+            >
+              <span className="text-lg">🧭</span>
+              Near Me — ATM, Parking, Petrol & More
+            </a>
             {navLinks.map((link) => (
               <a
                 key={link.href}
