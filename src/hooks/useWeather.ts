@@ -5,9 +5,9 @@ const WEATHER_URL =
   'https://api.open-meteo.com/v1/forecast' +
   '?latitude=28.5355&longitude=77.3910' +
   '&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,precipitation' +
-  '&daily=weather_code,temperature_2m_max,temperature_2m_min' +
+  '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max' +
   '&timezone=Asia%2FKolkata' +
-  '&forecast_days=3';
+  '&forecast_days=14';
 
 export interface WmoInfo {
   label: string;

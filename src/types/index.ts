@@ -13,6 +13,8 @@ export interface WeatherDaily {
   weather_code: number[];
   temperature_2m_max: number[];
   temperature_2m_min: number[];
+  precipitation_sum: number[];
+  wind_speed_10m_max: number[];
 }
 
 export interface WeatherApiResponse {
@@ -24,6 +26,23 @@ export type WeatherState =
   | { status: 'loading' }
   | { status: 'error'; message: string }
   | { status: 'success'; data: WeatherApiResponse };
+
+// AQI types
+export interface AqiCurrent {
+  us_aqi: number;
+  pm2_5: number;
+  pm10: number;
+  european_aqi: number;
+}
+
+export interface AqiApiResponse {
+  current: AqiCurrent;
+}
+
+export type AqiState =
+  | { status: 'loading' }
+  | { status: 'error' }
+  | { status: 'success'; data: AqiApiResponse };
 
 // Office types
 export interface Office {
