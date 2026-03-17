@@ -16,13 +16,23 @@ export interface AqiInfo {
   emoji: string;
 }
 
+/**
+ * Cap AQI to the standard US EPA scale (0–500).
+ * Open-Meteo sometimes returns uncapped extended values (e.g. 1500+)
+ * which are non-standard and confuse users.
+ */
+export function clampAqi(raw: number): number {
+  return Math.min(Math.max(Math.round(raw), 0), 500);
+}
+
 export function aqiToInfo(aqi: number): AqiInfo {
-  if (aqi <= 50)  return { label: 'Good',                      description: 'Air quality is satisfactory',          color: 'text-green-700',  bg: 'bg-green-50',   ring: 'ring-green-200',  emoji: '😊' };
-  if (aqi <= 100) return { label: 'Moderate',                  description: 'Acceptable; some pollutants present',  color: 'text-yellow-700', bg: 'bg-yellow-50',  ring: 'ring-yellow-200', emoji: '😐' };
-  if (aqi <= 150) return { label: 'Unhealthy for Sensitive',   description: 'Sensitive groups may be affected',     color: 'text-orange-700', bg: 'bg-orange-50',  ring: 'ring-orange-200', emoji: '😷' };
-  if (aqi <= 200) return { label: 'Unhealthy',                 description: 'Everyone may experience effects',      color: 'text-red-700',    bg: 'bg-red-50',     ring: 'ring-red-200',    emoji: '🤧' };
-  if (aqi <= 300) return { label: 'Very Unhealthy',            description: 'Health alert — avoid prolonged outdoor activity', color: 'text-purple-700', bg: 'bg-purple-50', ring: 'ring-purple-200', emoji: '😨' };
-  return           { label: 'Hazardous',                       description: 'Emergency conditions — stay indoors',  color: 'text-rose-900',   bg: 'bg-rose-50',    ring: 'ring-rose-300',   emoji: '☠️' };
+  const clamped = clampAqi(aqi);
+  if (clamped <= 50)  return { label: 'Good',                      description: 'Air quality is satisfactory',          color: 'text-green-700',  bg: 'bg-green-50',   ring: 'ring-green-200',  emoji: '😊' };
+  if (clamped <= 100) return { label: 'Moderate',                  description: 'Acceptable; some pollutants present',  color: 'text-yellow-700', bg: 'bg-yellow-50',  ring: 'ring-yellow-200', emoji: '😐' };
+  if (clamped <= 150) return { label: 'Unhealthy for Sensitive',   description: 'Sensitive groups may be affected',     color: 'text-orange-700', bg: 'bg-orange-50',  ring: 'ring-orange-200', emoji: '😷' };
+  if (clamped <= 200) return { label: 'Unhealthy',                 description: 'Everyone may experience effects',      color: 'text-red-700',    bg: 'bg-red-50',     ring: 'ring-red-200',    emoji: '🤧' };
+  if (clamped <= 300) return { label: 'Very Unhealthy',            description: 'Health alert — avoid prolonged outdoor activity', color: 'text-purple-700', bg: 'bg-purple-50', ring: 'ring-purple-200', emoji: '😨' };
+  return               { label: 'Hazardous',                       description: 'Emergency conditions — stay indoors',  color: 'text-rose-900',   bg: 'bg-rose-50',    ring: 'ring-rose-300',   emoji: '☠️' };
 }
 
 export function useAqi(): AqiState {

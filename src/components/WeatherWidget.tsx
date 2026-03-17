@@ -1,5 +1,5 @@
 import { useWeather, wmoToInfo } from '../hooks/useWeather';
-import { useAqi, aqiToInfo } from '../hooks/useAqi';
+import { useAqi, aqiToInfo, clampAqi } from '../hooks/useAqi';
 import { SectionWrapper } from './SectionWrapper';
 import { Card } from './ui/Card';
 import { Droplets, Wind, Thermometer, CloudRain } from 'lucide-react';
@@ -87,6 +87,7 @@ export function WeatherWidget() {
 
                 {aqi.status === 'success' && (() => {
                   const { us_aqi, pm2_5, pm10 } = aqi.data.current;
+                  const displayAqi = clampAqi(us_aqi);
                   const info = aqiToInfo(us_aqi);
                   return (
                     <div className="flex flex-col gap-4">
@@ -94,7 +95,7 @@ export function WeatherWidget() {
                       <div className={`flex items-center gap-4 p-4 rounded-2xl ring-1 ${info.bg} ${info.ring}`}>
                         <span className="text-4xl">{info.emoji}</span>
                         <div>
-                          <div className={`text-4xl font-extrabold leading-none ${info.color}`}>{us_aqi}</div>
+                          <div className={`text-4xl font-extrabold leading-none ${info.color}`}>{displayAqi}{us_aqi > 500 ? '+' : ''}</div>
                           <div className={`text-sm font-semibold mt-0.5 ${info.color}`}>{info.label}</div>
                         </div>
                       </div>
