@@ -18,6 +18,7 @@ const navLinks: NavLink[] = [
   { label: 'Offices', href: '#offices', icon: '🏢' },
   { label: 'Malls', href: '#malls', icon: '🛍️' },
   { label: 'Food', href: '#restaurants', icon: '🍽️' },
+  { label: 'Cafes', href: '#cafes', icon: '☕' },
   { label: 'Markets', href: '#markets', icon: '🛒' },
   { label: 'Places', href: '#places', icon: '📍' },
   { label: 'Fun', href: '#entertainment', icon: '🎬' },

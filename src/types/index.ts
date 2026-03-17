@@ -331,3 +331,18 @@ export interface DayTrip {
   imageUrl: string;
   category: 'Heritage' | 'Nature' | 'Pilgrimage' | 'Hill Station' | 'City';
 }
+
+// Cafe & Lounge types
+export interface Cafe {
+  id: string;
+  name: string;
+  category: 'Cafe' | 'Lounge' | 'Rooftop' | 'Bakery';
+  location: string;
+  sector: string;
+  priceForTwo: string;
+  rating: number;
+  tags: string[];
+  description: string;
+  timings: string;
+  highlights: string[];
+}

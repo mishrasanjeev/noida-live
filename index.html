@@ -13,9 +13,9 @@
     <meta name="apple-mobile-web-app-title" content="Noida Live" />
 
     <!-- Primary SEO -->
-    <title>Noida Live | City Directory — Restaurants, Malls, Hospitals &amp; More</title>
-    <meta name="description" content="Noida Live — the complete city guide. Find restaurants, hospitals, schools, malls, IT parks, events, metro routes and emergency contacts in Noida. Your #1 live Noida city directory." />
-    <meta name="keywords" content="noida live, live noida, noida city directory, noida restaurants, noida hospitals, noida malls, noida events, noida metro, noida schools, noida IT parks, noida apartments, things to do in noida, noida guide" />
+    <title>Noida Live | City Directory — Restaurants, Cafes, Malls, Hospitals &amp; More</title>
+    <meta name="description" content="Noida Live — your #1 Noida city directory with 250+ listings. Find restaurants, cafes, hospitals, schools, malls, IT parks, events, metro routes, apartments, sports facilities, day trips and emergency contacts. Live weather, GPS-based Near Me, and everything you need in Noida." />
+    <meta name="keywords" content="noida live, live noida, noida city directory, noida city guide, noida restaurants, noida cafes, noida lounges, noida hospitals, noida malls, noida events, noida metro, noida schools, noida IT parks, noida apartments, things to do in noida, noida guide, best restaurants in noida, best cafes in noida, noida shopping, noida nightlife, noida coworking, noida sports, noida places to visit, noida weather, noida emergency numbers, near me noida, noida day trips, jewar airport, noida expressway, greater noida, noida sector 18, noida sector 62" />
     <meta name="author" content="Noida Live" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link rel="canonical" href="https://noida.live/" />
@@ -24,20 +24,29 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://noida.live/" />
     <meta property="og:site_name" content="Noida Live" />
-    <meta property="og:title" content="Noida Live | City Directory — Restaurants, Malls, Hospitals &amp; More" />
-    <meta property="og:description" content="Your complete guide to Noida — restaurants, hospitals, schools, malls, IT parks, events, metro routes and more. The #1 live Noida city directory." />
+    <meta property="og:title" content="Noida Live | Noida City Directory — 250+ Listings" />
+    <meta property="og:description" content="Your complete guide to Noida — 14 restaurants, 10 cafes, 10 malls, 12 places to visit, hospitals, schools, IT parks, events, metro routes and more. The #1 live Noida city directory." />
     <meta property="og:locale" content="en_IN" />
+    <meta property="og:image" content="https://noida.live/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Noida Live — City Directory" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Noida Live | City Directory" />
-    <meta name="twitter:description" content="Your complete guide to Noida — restaurants, hospitals, schools, malls, IT parks, events, metro routes and more." />
+    <meta name="twitter:title" content="Noida Live | Noida City Directory" />
+    <meta name="twitter:description" content="250+ listings — restaurants, cafes, malls, hospitals, schools, IT parks, events, metro routes and more. Your complete Noida guide." />
+    <meta name="twitter:image" content="https://noida.live/og-image.svg" />
 
     <!-- Geo tags (help local search) -->
     <meta name="geo.region" content="IN-UP" />
     <meta name="geo.placename" content="Noida, Uttar Pradesh, India" />
     <meta name="geo.position" content="28.5355;77.3910" />
     <meta name="ICBM" content="28.5355, 77.3910" />
+
+    <!-- Alternate language hint for Hindi speakers -->
+    <link rel="alternate" hreflang="en-IN" href="https://noida.live/" />
+    <link rel="alternate" hreflang="en" href="https://noida.live/" />
 
     <!-- JSON-LD structured data -->
     <script type="application/ld+json">
@@ -49,9 +58,10 @@
           "@id": "https://noida.live/#website",
           "url": "https://noida.live/",
           "name": "Noida Live",
-          "alternateName": ["Live Noida", "Noida City Directory"],
-          "description": "Complete city directory for Noida — restaurants, hospitals, schools, events, malls, IT parks, metro and more.",
+          "alternateName": ["Live Noida", "Noida City Directory", "Noida Guide"],
+          "description": "Complete city directory for Noida with 250+ listings — restaurants, cafes, hospitals, schools, events, malls, IT parks, metro and more.",
           "inLanguage": "en-IN",
+          "publisher": { "@id": "https://noida.live/#organization" },
           "potentialAction": {
             "@type": "SearchAction",
             "target": {
@@ -62,14 +72,78 @@
           }
         },
         {
+          "@type": "Organization",
+          "@id": "https://noida.live/#organization",
+          "name": "Noida Live",
+          "url": "https://noida.live/",
+          "logo": "https://noida.live/favicon.svg",
+          "description": "Noida's most comprehensive city directory — helping residents, visitors and businesses discover everything the city has to offer.",
+          "areaServed": {
+            "@type": "City",
+            "name": "Noida",
+            "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" }
+          },
+          "knowsAbout": ["Noida restaurants", "Noida cafes", "Noida malls", "Noida hospitals", "Noida schools", "Noida IT parks", "Noida events", "Noida metro", "Noida apartments"]
+        },
+        {
           "@type": "WebPage",
           "@id": "https://noida.live/#webpage",
           "url": "https://noida.live/",
-          "name": "Noida Live | City Directory",
+          "name": "Noida Live | City Directory — Restaurants, Cafes, Malls, Hospitals & More",
           "isPartOf": { "@id": "https://noida.live/#website" },
           "about": { "@id": "https://noida.live/#city" },
-          "description": "Your complete guide to living, working and exploring Noida.",
-          "inLanguage": "en-IN"
+          "description": "Your complete guide to living, working and exploring Noida with 250+ curated listings across 23 categories.",
+          "inLanguage": "en-IN",
+          "datePublished": "2026-02-01",
+          "dateModified": "2026-03-17",
+          "breadcrumb": { "@id": "https://noida.live/#breadcrumb" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://noida.live/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://noida.live/" },
+            { "@type": "ListItem", "position": 2, "name": "Restaurants", "item": "https://noida.live/#restaurants" },
+            { "@type": "ListItem", "position": 3, "name": "Cafes", "item": "https://noida.live/#cafes" },
+            { "@type": "ListItem", "position": 4, "name": "Malls", "item": "https://noida.live/#malls" },
+            { "@type": "ListItem", "position": 5, "name": "Hospitals", "item": "https://noida.live/#hospitals" },
+            { "@type": "ListItem", "position": 6, "name": "Schools", "item": "https://noida.live/#schools" },
+            { "@type": "ListItem", "position": 7, "name": "Events", "item": "https://noida.live/#events" },
+            { "@type": "ListItem", "position": 8, "name": "IT Parks", "item": "https://noida.live/#it-parks" },
+            { "@type": "ListItem", "position": 9, "name": "Day Trips", "item": "https://noida.live/#day-trips" }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://noida.live/#sections",
+          "name": "Noida City Directory Sections",
+          "description": "All sections available on Noida Live",
+          "numberOfItems": 23,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Live Weather & AQI", "url": "https://noida.live/#weather" },
+            { "@type": "ListItem", "position": 2, "name": "News & Media", "url": "https://noida.live/#news" },
+            { "@type": "ListItem", "position": 3, "name": "Emergency Helplines", "url": "https://noida.live/#emergency" },
+            { "@type": "ListItem", "position": 4, "name": "Events & Festivals", "url": "https://noida.live/#events" },
+            { "@type": "ListItem", "position": 5, "name": "Coworking & Offices", "url": "https://noida.live/#offices" },
+            { "@type": "ListItem", "position": 6, "name": "Shopping Malls", "url": "https://noida.live/#malls" },
+            { "@type": "ListItem", "position": 7, "name": "Restaurants & Food", "url": "https://noida.live/#restaurants" },
+            { "@type": "ListItem", "position": 8, "name": "Cafes & Lounges", "url": "https://noida.live/#cafes" },
+            { "@type": "ListItem", "position": 9, "name": "Local Markets & Bazaars", "url": "https://noida.live/#markets" },
+            { "@type": "ListItem", "position": 10, "name": "Places to Visit", "url": "https://noida.live/#places" },
+            { "@type": "ListItem", "position": 11, "name": "Entertainment & Gaming", "url": "https://noida.live/#entertainment" },
+            { "@type": "ListItem", "position": 12, "name": "Sports & Recreation", "url": "https://noida.live/#sports" },
+            { "@type": "ListItem", "position": 13, "name": "Religious Places", "url": "https://noida.live/#religious" },
+            { "@type": "ListItem", "position": 14, "name": "Apartments & Housing", "url": "https://noida.live/#apartments" },
+            { "@type": "ListItem", "position": 15, "name": "PG & Hostels", "url": "https://noida.live/#hostels" },
+            { "@type": "ListItem", "position": 16, "name": "Hospitals & Healthcare", "url": "https://noida.live/#hospitals" },
+            { "@type": "ListItem", "position": 17, "name": "Schools & Education", "url": "https://noida.live/#schools" },
+            { "@type": "ListItem", "position": 18, "name": "Near Me — GPS Services", "url": "https://noida.live/#near-me" },
+            { "@type": "ListItem", "position": 19, "name": "Metro & Connectivity", "url": "https://noida.live/#connectivity" },
+            { "@type": "ListItem", "position": 20, "name": "Jewar International Airport", "url": "https://noida.live/#jewar-airport" },
+            { "@type": "ListItem", "position": 21, "name": "IT Parks & Tech Hub", "url": "https://noida.live/#it-parks" },
+            { "@type": "ListItem", "position": 22, "name": "Government Services", "url": "https://noida.live/#government" },
+            { "@type": "ListItem", "position": 23, "name": "Day Trips from Noida", "url": "https://noida.live/#day-trips" }
+          ]
         },
         {
           "@type": "City",
@@ -90,6 +164,60 @@
               "name": "India"
             }
           }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://noida.live/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What are the best restaurants in Noida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Noida has 14+ top restaurants including Barbeque Nation, Punjabi by Nature, The Yellow Chilli (by Sanjeev Kapoor), Mamagoto, Imperfecto, Saffron at Radisson Blu, and Brahmaputra Market street food stalls. Browse them all at noida.live."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the best cafes in Noida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Noida's cafe scene includes Blue Tokai Coffee Roasters (specialty coffee), Social (co-working lounge), Third Wave Coffee, Starbucks, Chaayos, The Potbelly Rooftop Cafe, Lord of the Drinks, and Depot48. Find all 10 at noida.live."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many malls are there in Noida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Noida has 10+ major malls including DLF Mall of India (India's largest, 330+ stores), Great India Place, Logix City Centre, The Grand Venice, Gardens Galleria, CenterStage Mall, Gaur City Mall, Wave Mall, Spice World Mall, and Stellar IT Park Mall."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the top hospitals in Noida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Noida's top hospitals include Jaypee Hospital, Felix Hospital, Yatharth Super Speciality, Metro Hospital, Max Super Speciality, Fortis, Kailash Hospital, and the Government District Hospital. All offer 24x7 emergency services."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the things to do in Noida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Things to do in Noida: visit Botanical Garden, Worlds of Wonder theme park, Okhla Bird Sanctuary, Buddh International Circuit (F1 track), KidZania, ISKCON Temple, explore Atta Market nightlife, try 10+ cafes and lounges, or plan a day trip to Agra, Mathura, or Rishikesh. Noida Live lists 250+ places and activities."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Jewar Airport open?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Noida International Airport (Jewar) is under construction and expected to become operational in phases. It will be India's largest airport and a game-changer for Noida's connectivity. Track the latest updates on noida.live."
+              }
+            }
+          ]
         }
       ]
     }

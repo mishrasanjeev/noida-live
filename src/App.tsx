@@ -23,6 +23,7 @@ import { SportsSection } from './components/SportsSection';
 import { ReligiousSection } from './components/ReligiousSection';
 import { DayTripsSection } from './components/DayTripsSection';
 import { NearMeSection } from './components/NearMeSection';
+import { CafesSection } from './components/CafesSection';
 import { useVisitorCount } from './hooks/useVisitorCount';
 import { SearchBar } from './components/SearchBar';
 import { SearchAnalyticsPanel } from './components/SearchAnalyticsPanel';
@@ -36,6 +37,7 @@ const heroLinks = [
   { href: '#offices', label: '🏢 Offices' },
   { href: '#malls', label: '🛍️ Malls' },
   { href: '#restaurants', label: '🍽️ Food' },
+  { href: '#cafes', label: '☕ Cafes' },
   { href: '#markets', label: '🛒 Markets' },
   { href: '#places', label: '📍 Places' },
   { href: '#entertainment', label: '🎬 Fun' },
@@ -61,6 +63,7 @@ const footerLinks = [
   { href: '#offices', label: 'Office Spaces' },
   { href: '#malls', label: 'Shopping Malls' },
   { href: '#restaurants', label: 'Restaurants & Food' },
+  { href: '#cafes', label: 'Cafes & Lounges' },
   { href: '#markets', label: 'Local Markets' },
   { href: '#places', label: 'Places to Visit' },
   { href: '#entertainment', label: 'Entertainment' },
@@ -97,13 +100,30 @@ function App() {
             🏙️ Noida Live
           </h1>
           <p className="text-indigo-200 text-base md:text-xl max-w-2xl mx-auto leading-relaxed mb-8">
-            Your complete city directory — restaurants, hospitals, schools, malls, IT parks,
+            Your complete city directory — restaurants, cafes, hospitals, schools, malls, IT parks,
             events, metro routes and everything live in Noida.
           </p>
 
           {/* Search bar */}
           <div className="mb-8 px-2">
             <SearchBar />
+          </div>
+
+          {/* City stats */}
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-4 max-w-3xl mx-auto mb-10">
+            {[
+              { value: '23+', label: 'Sections' },
+              { value: '10', label: 'Malls' },
+              { value: '14', label: 'Restaurants' },
+              { value: '10', label: 'Cafes' },
+              { value: '12', label: 'Places' },
+              { value: '200+', label: 'Listings' },
+            ].map(({ value, label }) => (
+              <div key={label} className="bg-white/10 backdrop-blur-sm rounded-xl px-3 py-3 border border-white/10">
+                <div className="text-xl sm:text-2xl font-bold text-white">{value}</div>
+                <div className="text-indigo-300 text-[10px] sm:text-xs font-medium uppercase tracking-wide">{label}</div>
+              </div>
+            ))}
           </div>
 
           <div className="flex flex-wrap justify-center gap-2">
@@ -141,34 +161,35 @@ function App() {
         </div>
         <RestaurantsSection />
         <div className="bg-white">
-          <MarketsSection />
+          <CafesSection />
         </div>
+        <MarketsSection />
 
         {/* Leisure */}
-        <PlacesSection />
         <div className="bg-white">
-          <EntertainmentSection />
+          <PlacesSection />
         </div>
-        <SportsSection />
+        <EntertainmentSection />
         <div className="bg-white">
-          <ReligiousSection />
+          <SportsSection />
         </div>
+        <ReligiousSection />
 
         {/* Living */}
-        <ApartmentsSection />
         <div className="bg-white">
-          <HostelSection />
+          <ApartmentsSection />
         </div>
-        <HospitalsSection />
+        <HostelSection />
         <div className="bg-white">
-          <SchoolsSection />
+          <HospitalsSection />
         </div>
-        <NearMeSection />
+        <SchoolsSection />
+        <div className="bg-white">
+          <NearMeSection />
+        </div>
 
         {/* Infrastructure */}
-        <div className="bg-white">
-          <ConnectivitySection />
-        </div>
+        <ConnectivitySection />
         <JewarAirportSection />
         <div className="bg-white">
           <ITParkSection />
