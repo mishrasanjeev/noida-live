@@ -30,7 +30,6 @@ jobs:
       - run: npm run build
         env:
           VITE_BASE_URL: /noida-live/
-          VITE_WAQI_TOKEN: ${{ secrets.VITE_WAQI_TOKEN }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -62,8 +61,7 @@ jobs:
         run: |
           BUILD_ID=$(gcloud builds submit \
             --project=noida-city-dir \
-            --config=cloudbuild.yaml \
-            --substitutions="_VITE_WAQI_TOKEN=${{ secrets.VITE_WAQI_TOKEN }}" \
+            --tag gcr.io/noida-city-dir/noida-city-dir:latest \
             --async \
             --format='value(id)' \
             .)

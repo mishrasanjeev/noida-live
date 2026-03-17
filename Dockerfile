@@ -1,8 +1,6 @@
 # Build stage
 FROM node:22-alpine AS builder
 WORKDIR /app
-ARG VITE_WAQI_TOKEN
-ENV VITE_WAQI_TOKEN=$VITE_WAQI_TOKEN
 COPY package*.json ./
 RUN npm ci
 COPY . .

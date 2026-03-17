@@ -1,8 +1,8 @@
 import { useWeather, wmoToInfo } from '../hooks/useWeather';
-import { useAqi, aqiToInfo } from '../hooks/useAqi';
+import { NOIDA_AQI_URL } from '../hooks/useAqi';
 import { SectionWrapper } from './SectionWrapper';
 import { Card } from './ui/Card';
-import { Droplets, Wind, Thermometer, CloudRain } from 'lucide-react';
+import { Droplets, Wind, Thermometer, CloudRain, ExternalLink } from 'lucide-react';
 
 function StatItem({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
@@ -16,13 +16,12 @@ function StatItem({ icon, label, value }: { icon: React.ReactNode; label: string
 
 export function WeatherWidget() {
   const weather = useWeather();
-  const aqi = useAqi();
 
   return (
     <SectionWrapper
       id="weather"
       title="Live Weather & Air Quality"
-      subtitle="Current conditions, AQI, and 14-day forecast for Noida — powered by Open-Meteo"
+      subtitle="Current conditions and 14-day forecast for Noida — powered by Open-Meteo"
       icon="🌤️"
     >
       {weather.status === 'loading' && (
@@ -71,83 +70,45 @@ export function WeatherWidget() {
                 </div>
               </Card>
 
-              {/* AQI card */}
-              <Card className="p-6 flex flex-col gap-4">
+              {/* AQI card — links to real CPCB data on AQICN */}
+              <Card className="p-6 flex flex-col">
                 <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide">Air Quality Index</h3>
 
-                {aqi.status === 'loading' && (
-                  <div className="flex-1 flex items-center justify-center">
-                    <div className="w-5 h-5 border-2 border-indigo-400 border-t-transparent rounded-full animate-spin" />
+                <div className="flex-1 flex flex-col items-center justify-center gap-4 py-4">
+                  <div className="text-5xl">🌬️</div>
+                  <div className="text-center">
+                    <p className="text-sm font-medium text-slate-700">Real-time CPCB Data</p>
+                    <p className="text-xs text-slate-400 mt-1">From Noida Sector-125 ground station</p>
                   </div>
-                )}
 
-                {aqi.status === 'error' && (
-                  <p className="text-sm text-slate-400">AQI data temporarily unavailable</p>
-                )}
+                  <a
+                    href={NOIDA_AQI_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors no-underline shadow-sm"
+                  >
+                    Check Live AQI
+                    <ExternalLink size={14} />
+                  </a>
+                </div>
 
-                {aqi.status === 'unconfigured' && (
-                  <div className="flex-1 flex flex-col items-center justify-center gap-2 py-4">
-                    <span className="text-3xl">🌬️</span>
-                    <p className="text-sm text-slate-500 text-center">AQI data source being upgraded</p>
-                    <p className="text-xs text-slate-400 text-center">Switching to CPCB ground stations for accurate readings</p>
+                {/* AQI scale reference */}
+                <div className="mt-auto pt-4 border-t border-slate-100">
+                  <div className="h-2 rounded-full overflow-hidden flex">
+                    <div className="flex-1 bg-green-400" />
+                    <div className="flex-1 bg-yellow-400" />
+                    <div className="flex-1 bg-orange-400" />
+                    <div className="flex-1 bg-red-500" />
+                    <div className="flex-1 bg-purple-500" />
+                    <div className="flex-1 bg-rose-900" />
                   </div>
-                )}
-
-                {aqi.status === 'success' && (() => {
-                  const { aqi: aqiValue, pm25, pm10, station } = aqi.data;
-                  const info = aqiToInfo(aqiValue);
-                  return (
-                    <div className="flex flex-col gap-4">
-                      {/* Big AQI number */}
-                      <div className={`flex items-center gap-4 p-4 rounded-2xl ring-1 ${info.bg} ${info.ring}`}>
-                        <span className="text-4xl">{info.emoji}</span>
-                        <div>
-                          <div className={`text-4xl font-extrabold leading-none ${info.color}`}>{aqiValue}</div>
-                          <div className={`text-sm font-semibold mt-0.5 ${info.color}`}>{info.label}</div>
-                        </div>
-                      </div>
-                      <p className="text-xs text-slate-500 leading-relaxed">{info.description}</p>
-
-                      {/* PM breakdown */}
-                      {(pm25 !== null || pm10 !== null) && (
-                        <div className="grid grid-cols-2 gap-2">
-                          {pm25 !== null && (
-                            <div className="bg-slate-50 rounded-xl p-3 text-center">
-                              <div className="text-lg font-bold text-slate-700">{pm25.toFixed(1)}</div>
-                              <div className="text-[10px] text-slate-400 font-medium mt-0.5">PM2.5 μg/m³</div>
-                            </div>
-                          )}
-                          {pm10 !== null && (
-                            <div className="bg-slate-50 rounded-xl p-3 text-center">
-                              <div className="text-lg font-bold text-slate-700">{pm10.toFixed(1)}</div>
-                              <div className="text-[10px] text-slate-400 font-medium mt-0.5">PM10 μg/m³</div>
-                            </div>
-                          )}
-                        </div>
-                      )}
-
-                      {/* AQI scale bar */}
-                      <div>
-                        <div className="h-2 rounded-full overflow-hidden flex">
-                          <div className="flex-1 bg-green-400" />
-                          <div className="flex-1 bg-yellow-400" />
-                          <div className="flex-1 bg-orange-400" />
-                          <div className="flex-1 bg-red-500" />
-                          <div className="flex-1 bg-purple-500" />
-                          <div className="flex-1 bg-rose-900" />
-                        </div>
-                        <div className="flex justify-between text-[9px] text-slate-400 mt-1">
-                          <span>Good</span><span>Moderate</span><span>Unhealthy</span><span>Hazardous</span>
-                        </div>
-                      </div>
-
-                      {/* Station attribution */}
-                      <p className="text-[10px] text-slate-400 text-right">
-                        📍 {station} · via CPCB
-                      </p>
-                    </div>
-                  );
-                })()}
+                  <div className="flex justify-between text-[9px] text-slate-400 mt-1">
+                    <span>0–50 Good</span><span>51–100</span><span>101–150</span><span>151–200</span><span>201–300</span><span>301+</span>
+                  </div>
+                  <p className="text-[10px] text-slate-400 mt-2 text-center">
+                    Source: CPCB via <a href={NOIDA_AQI_URL} target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:underline no-underline">aqicn.org</a>
+                  </p>
+                </div>
               </Card>
             </div>
 
