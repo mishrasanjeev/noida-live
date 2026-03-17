@@ -1,5 +1,5 @@
 import { useWeather, wmoToInfo } from '../hooks/useWeather';
-import { useAqi, aqiToInfo, clampAqi } from '../hooks/useAqi';
+import { useAqi, aqiToInfo } from '../hooks/useAqi';
 import { SectionWrapper } from './SectionWrapper';
 import { Card } from './ui/Card';
 import { Droplets, Wind, Thermometer, CloudRain } from 'lucide-react';
@@ -82,36 +82,49 @@ export function WeatherWidget() {
                 )}
 
                 {aqi.status === 'error' && (
-                  <p className="text-sm text-slate-400">AQI unavailable</p>
+                  <p className="text-sm text-slate-400">AQI data temporarily unavailable</p>
+                )}
+
+                {aqi.status === 'unconfigured' && (
+                  <div className="flex-1 flex flex-col items-center justify-center gap-2 py-4">
+                    <span className="text-3xl">🌬️</span>
+                    <p className="text-sm text-slate-500 text-center">AQI data source being upgraded</p>
+                    <p className="text-xs text-slate-400 text-center">Switching to CPCB ground stations for accurate readings</p>
+                  </div>
                 )}
 
                 {aqi.status === 'success' && (() => {
-                  const { us_aqi, pm2_5, pm10 } = aqi.data.current;
-                  const displayAqi = clampAqi(us_aqi);
-                  const info = aqiToInfo(us_aqi);
+                  const { aqi: aqiValue, pm25, pm10, station } = aqi.data;
+                  const info = aqiToInfo(aqiValue);
                   return (
                     <div className="flex flex-col gap-4">
                       {/* Big AQI number */}
                       <div className={`flex items-center gap-4 p-4 rounded-2xl ring-1 ${info.bg} ${info.ring}`}>
                         <span className="text-4xl">{info.emoji}</span>
                         <div>
-                          <div className={`text-4xl font-extrabold leading-none ${info.color}`}>{displayAqi}{us_aqi > 500 ? '+' : ''}</div>
+                          <div className={`text-4xl font-extrabold leading-none ${info.color}`}>{aqiValue}</div>
                           <div className={`text-sm font-semibold mt-0.5 ${info.color}`}>{info.label}</div>
                         </div>
                       </div>
                       <p className="text-xs text-slate-500 leading-relaxed">{info.description}</p>
 
                       {/* PM breakdown */}
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="bg-slate-50 rounded-xl p-3 text-center">
-                          <div className="text-lg font-bold text-slate-700">{pm2_5.toFixed(1)}</div>
-                          <div className="text-[10px] text-slate-400 font-medium mt-0.5">PM2.5 μg/m³</div>
+                      {(pm25 !== null || pm10 !== null) && (
+                        <div className="grid grid-cols-2 gap-2">
+                          {pm25 !== null && (
+                            <div className="bg-slate-50 rounded-xl p-3 text-center">
+                              <div className="text-lg font-bold text-slate-700">{pm25.toFixed(1)}</div>
+                              <div className="text-[10px] text-slate-400 font-medium mt-0.5">PM2.5 μg/m³</div>
+                            </div>
+                          )}
+                          {pm10 !== null && (
+                            <div className="bg-slate-50 rounded-xl p-3 text-center">
+                              <div className="text-lg font-bold text-slate-700">{pm10.toFixed(1)}</div>
+                              <div className="text-[10px] text-slate-400 font-medium mt-0.5">PM10 μg/m³</div>
+                            </div>
+                          )}
                         </div>
-                        <div className="bg-slate-50 rounded-xl p-3 text-center">
-                          <div className="text-lg font-bold text-slate-700">{pm10.toFixed(1)}</div>
-                          <div className="text-[10px] text-slate-400 font-medium mt-0.5">PM10 μg/m³</div>
-                        </div>
-                      </div>
+                      )}
 
                       {/* AQI scale bar */}
                       <div>
@@ -127,6 +140,11 @@ export function WeatherWidget() {
                           <span>Good</span><span>Moderate</span><span>Unhealthy</span><span>Hazardous</span>
                         </div>
                       </div>
+
+                      {/* Station attribution */}
+                      <p className="text-[10px] text-slate-400 text-right">
+                        📍 {station} · via CPCB
+                      </p>
                     </div>
                   );
                 })()}

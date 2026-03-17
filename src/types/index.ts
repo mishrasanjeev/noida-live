@@ -27,22 +27,19 @@ export type WeatherState =
   | { status: 'error'; message: string }
   | { status: 'success'; data: WeatherApiResponse };
 
-// AQI types
-export interface AqiCurrent {
-  us_aqi: number;
-  pm2_5: number;
-  pm10: number;
-  european_aqi: number;
-}
-
-export interface AqiApiResponse {
-  current: AqiCurrent;
+// AQI types (WAQI / aqicn.org — real CPCB ground station data)
+export interface AqiData {
+  aqi: number;
+  pm25: number | null;
+  pm10: number | null;
+  station: string;
 }
 
 export type AqiState =
   | { status: 'loading' }
   | { status: 'error' }
-  | { status: 'success'; data: AqiApiResponse };
+  | { status: 'unconfigured' }
+  | { status: 'success'; data: AqiData };
 
 // Office types
 export interface Office {
